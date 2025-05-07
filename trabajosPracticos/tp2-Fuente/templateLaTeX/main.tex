@@ -1,0 +1,60 @@
+\documentclass[a4paper]{article}
+
+\usepackage{xparse}
+\usepackage{colortbl}
+\usepackage{circuitikz}
+\usepackage{cancel}
+\usepackage{siunitx}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage[table, xcdraw]{xcolor}
+\usepackage{times}
+\usepackage{tikz}
+\usepackage[margin=0cm]{geometry}
+\usepackage{graphicx}
+\usepackage{anyfontsize}
+\usepackage{fancyhdr}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[explicit]{titlesec}
+\usepackage{etoolbox}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage[version=4]{mhchem}
+\usepackage[table, xcdraw, dvipsnames]{xcolor}
+\usepackage{lastpage}
+\usepackage{hyperref}
+
+\include{newCommands}
+
+\begin{document}
+    \include{caratula}
+    \include{configContenido}
+    \include{indice}
+    \saltoPag{}
+    \begin{multicols}{2} 
+        \input{sinRegulacion} 
+    \end{multicols}
+
+    \clearpage
+    \thispagestyle{empty}
+    \null
+    \vfill
+    \begin{center}
+        \Huge \textbf{Anexo: mediciones con osciloscopio}
+    \end{center}
+    \vfill
+    \clearpage
+
+    \begin{multicols}{2}
+        \input{anexo}
+    \end{multicols}
+
+\end{document}
+
+
