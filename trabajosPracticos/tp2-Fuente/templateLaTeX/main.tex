@@ -7,27 +7,28 @@
 \usepackage{siunitx}
 \usepackage{multirow}
 \usepackage{array}
-\usepackage[table, xcdraw]{xcolor}
+\usepackage[table, xcdraw, dvipsnames]{xcolor}
 \usepackage{times}
 \usepackage{tikz}
-\usepackage[margin=0cm]{geometry}
+\usepackage[top=1.5cm, bottom=1.5cm, left=2.5cm, right=1.5cm]{geometry}
 \usepackage{graphicx}
 \usepackage{anyfontsize}
 \usepackage{fancyhdr}
 \usepackage{indentfirst}
 \usepackage{amsmath}
-\usepackage[spanish]{babel}
+\usepackage[spanish, es-tabla]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[explicit]{titlesec}
 \usepackage{etoolbox}
 \usepackage{multicol}
 \usepackage{enumitem}
-\usepackage{caption}
+\usepackage[labelformat=simple, labelsep=none]{caption}
 \usepackage{booktabs}
 \usepackage{amsfonts}
 \usepackage[version=4]{mhchem}
-\usepackage[table, xcdraw, dvipsnames]{xcolor}
+\usepackage{float}
 \usepackage{lastpage}
+\usepackage{subcaption}
 \usepackage{hyperref}
 \usepackage{capt-of}
 
@@ -42,10 +43,9 @@
     \saltoPag{}
 
     \begin{multicols}{2}
+        \setlength{\columnsep}{10mm}
         \input{teorico1}
-        \saltoPag{}
         \input{punto2}
-        \saltoPag{}
         \input{anexo}
     \end{multicols}
 
