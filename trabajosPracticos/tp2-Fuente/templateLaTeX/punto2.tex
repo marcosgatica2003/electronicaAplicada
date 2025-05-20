@@ -1,0 +1,128 @@
+\section{Punto 2: Mediciones y Ensayos}
+    \subsection{Elementos utilizados}
+    
+    \begin{itemize}
+        \item Reostato de 50$\Omega$.
+        \item Pinza amperométrica.
+        \item Multímetro.
+        \item Osciloscopio.
+    \end{itemize}
+
+    \indent{Para realizar las mediciones se utilizó un reostato de 50$\Omega$ que simula la carga del sistema y una pinza amperométrica para medir la corriente. También se utilizó un multímetro para medir la tensión y temperatura del LM317, finalmente se utilizó un osciloscopio para visualizar la señal filtrada.}
+
+    \subsection{Mediciones punto alto y punto bajo sin LM317}
+
+    \indent{El objetico de esta parte es medir el RV (regulación de voltage), el FR (factor de ripple) y la resistencia interna antes de pasar por el circuito del LM317, las escuaciones para calcular estos valores son las siguientes:}
+
+    \begin{equation}
+        RV = \frac{V_{\text{vacío}}-V_{\text{carga maxima}}}{V_{\text{carga maxima}}} \cdot 100\%
+    \end{equation}
+
+    \begin{equation}
+        FR = \frac{V_{\text{ripple}}}{V_{\text{carga maxima}}} * 100\%
+    \end{equation}
+
+    \begin{equation}
+        R_{int} = \frac{V_{\text{vacío}} - V_{\text{carga maxima}}}{I_{\text{carga}}}
+    \end{equation}
+
+    \begin{equation}
+        V_{\text{ripple}} = \frac{V_{\text{ripple}}*0,5}{\sqrt{2}}
+    \end{equation}
+
+    \subsection{Punto bajo de la fuente}
+
+    \indent{Para el punto bajo de la fuente medimos la tensión en el circuito desde cuando no tiene carga (en el vacio), hasat una carga de $1,5 A$, esto corresponde a la llave selectora que entrega desde $0 - 15 V$ de tensión.}
+
+    \begin{itemize}
+        \item Tensión en vacío: $V_{\text{vacío}} = 17,56 V$.
+        \item Tensión con $0,50 A$: $V_{\text{carga}} = 15,20 V$.
+        \item Tensión con $0,75 A$: $V_{\text{carga}} = 14,60 V$.
+        \item Tensión con $1,00 A$: $V_{\text{carga}} = 14,04 V$.
+        \item Tensión con $1,25 A$: $V_{\text{carga}} = 13,53 V$.
+        \item Tensión con $1,50 A$: $V_{\text{carga maxima}} = 13,11 V$.
+        \item Tensión de ripple Multimetro True RMS: $V_{\text{ripple}} = 0,89 V$. 
+        \item Tensión de ripple Osciloscopio: $V_{\text{ripple}} = 0,919 V$.
+    \end{itemize}
+
+    \columnbreak
+    \text{}
+    \midTitle{black}{Resultados del Punto Bajo de la Fuente}
+    
+    \begin{itemize}
+        \item $RV = \frac{17,56 - 13,11}{13,11} * 100\% = 33\%$.
+        \item $FR = \frac{0,89}{13,11} * 100\% = 6,81\%$.
+        \item $R_{int} = \frac{17,56 - 13,11}{1,50} = 2,96 \Omega$.
+    \end{itemize}
+
+    \subsection{Punto alto de la fuente}
+    
+    \indent{Para el punto alto de la fuente medimos la tensión en el circuito desde cuando no tiene carga (en el vacio), hasat una carga de $1,5 A$, esto corresponde a la llave selectora que entrega desde $15 - 30 V$ de tensión.}
+
+    \begin{itemize}
+        \item Tensión en vacío: $V_{\text{vacío}} = 35,52 V$.
+        \item Tensión con $0,50 A$: $V_{\text{carga}} = 30,59 V$.
+        \item Tensión con $0,75 A$: $V_{\text{carga}} = 29,61 V$.
+        \item Tensión con $1,00 A$: $V_{\text{carga}} = 28,28 V$.
+        \item Tensión con $1,25 A$: $V_{\text{carga}} = 26,93 V$.
+        \item Tensión con $1,50 A$: $V_{\text{carga maxima}} = 25,75 V$.
+        \item Tensión de ripple Multimetro True RMS: $V_{\text{ripple}} = 0,85 V$.
+        \item Tensión de ripple Osciloscopio: $V_{\text{ripple}} = 0,84 V$.
+    \end{itemize}
+
+    \midTitle{black}{Resultados del Punto Alto de la Fuente}
+    \begin{itemize}
+        \item $RV = \frac{35,52 - 25,75}{25,75} = 0,3794 = 37,94\%$.
+        \item $FR = \frac{0,85}{25,75} * 100\% = 3,30\%$.
+        \item $R_{int} = \frac{35,52 - 25,75}{1,50} = 6,51 \Omega$.
+    \end{itemize}
+
+    \subsection{Regulación LM317 (Punto Alto)}
+
+    \indent{En esta parte de los ensayos se busca medir la regulación del LM317 con una carga de $1,5 A$, como el LM317 trabaja en condiciones de maxima  potencia, midiendo su temperatura y calculando la temperatura de la juntura y si nuestra fuente regula correctamente.}
+
+ \begin{center}
+    \begin{tabular}{ c|c|c }
+        & Mínimo & Máximo \\
+        \midrule
+        Punto Bajo & 0,31 & 15,31 \\
+        Punto Alto & 0,41 & 30,46 \\
+    \end{tabular}
+\end{center}
+
+    \begin{itemize}
+        \item Tensión en el vacío: $V_{\text{vacío}} = 15,74 V$.
+        \item Tensión con $1,50 A$: $V_{\text{carga maxima}} = 15,60s V$.
+        \item Tensión de ripple osciloscopio: $V_{\text{ripple}} =  1,414 * 10^{-3} V$.
+    \end{itemize}
+
+    \midTitle{black}{Resultados del LM317 (Punto Alto)}
+    \begin{itemize}
+        \item $RV = \frac{15,74 - 15,60}{15,60} * 100\% = 0,89743 = 8,97\%$.
+        \item $FR = \frac{1,414 * 10^{-3}}{15,60} * 100\% = 9,065 * 10^{-3}\%$.
+    \end{itemize}
+
+    \saltoPag{}
+    
+    \indent{Ecuación para calcular la temperatura de la juntura del LM317}
+    %\vspace{-0.2cm}
+    \begin{equation}
+        T_{J} = T_{C} +P_{D} * \theta_{JC}
+    \end{equation}
+
+    \indent{En estas condiciones el LM317 esta disipando la máxima potencia $14.98 W$, ya que lo hicimos trabajar con una carga de $1,42 A$ y una tensión de $10,33 V$, el valor de $\theta_{JC}$ es de $3 \frac{C}{W}$, y la temperatura del encapsulado del LM317 medida fue  de $T_{C} = 70 C$.}
+
+    \begin{align*}
+        T_{J} &= 70 + 14.98 * 3 \\
+        T_{J} &= 70 + 44.94 \\
+        T_{J} &= 114.94 C
+    \end{align*}
+    \indent{La temperatura de la juntura del LM317 es de $114.94 C$, por lo que el LM317 esta trabajando en condiciones normales, ya que su temperatura máxima de trabajo es de $125 C$.}
+
+\section{Conclusiones}
+
+\indent{En este trabajo práctico se analizaron las características de una fuente de alimentación, evaluando su comportamiento en diferentes condiciones de carga y utilizando diversos instrumentos de medición. Se calcularon parámetros clave como la regulación de voltaje ($RV$), el factor de ripple ($FR$) y la resistencia interna ($Rint$) tanto en el punto bajo como en el punto alto de la fuente. Los resultados obtenidos muestran que la fuente presenta una regulación capacitiva aceptable, aunque con diferencias notables entre los puntos alto y bajo, ya que no se utilizó en esos ensayos el regulador LM317.}
+\indent{Además, se evaluó el desempeño del regulador LM317 bajo condiciones de máxima potencia, verificando su capacidad para mantener la regulación de voltaje, con un $FR = 9,065 * 10^{-3}$ siendo este un valor muy bueno, comprobamos que el potenciómetro de la fuente regula correctamente. Los cálculos realizados indican que la temperatura de la juntura del LM317 se encuentra dentro de los límites operativos seguros, lo que confirma su correcto funcionamiento disipando la potencia generada}
+
+\columnbreak
+\text{}

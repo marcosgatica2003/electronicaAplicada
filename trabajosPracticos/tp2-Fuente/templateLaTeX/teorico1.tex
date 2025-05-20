@@ -1,0 +1,154 @@
+\section{Planteamiento e introducción teórica} 
+\includegraphics[width=7.8cm]{./imagenes/Diagra.png}
+\subsection{Transformador}
+\sangria{} El transformador tiene dos funciones:
+
+\begin{itemize}
+    \item Aislar galvánicamente de la línea de 220 V 50 Hz a la fuente, ya que
+    primario y secundario están acoplados magnéticamente.
+    \item Reducir la tensión de 220 V a 12/24 V o el valor que sea necesario según
+    las necesidad de la fuente a construir.
+\end{itemize}
+
+\sangria{} El trasnformador  utilizado en esta funte es un 12+12 X 3A y su simbolo es el siguiente:
+
+\includegraphics[width=6cm]{./imagenes/transfo.png}
+
+\sangria{} La entrada del transformador es la tensión alterna de 220 V y la salida es la tensión alterna de 12V+12V. La corriente alterna se conecta a la entrada del trasnformador a un inductor que produce un campo magnético que mediante inducción electromagnética produce una corriente alterna en el secundario que deende del bobinado de los inductores. 
+\sangria{} Se especifica que al transformador se le pueden extaer hasta 3A, lo que significa que en la rectificación de onda completa con punto medio se extrae 1,5A por rama 
+
+\subsection{Rectificador}
+\sangria{} La función del rectificador es convertir la tensión alterna en una continua pulsante, esto lo lleva a cabo un puente de diodos que permite el paso de la corriente en un sentido y bloquea el paso en el otro. 
+\begin{center}
+\includegraphics[width=6cm]{./imagenes/puent.png}
+\end{center}
+\sangria{} Esto ocurre ya que los diodos Conducen corriente en un solo sentido y al conectarlos en inversa, extremo positivo al negativo, no permiten el paso de la corriente.
+
+\columnbreak
+
+\sangria{} Al entrar una tensión alterna al puente como la de la siguiente figura: 
+\begin{center}
+    \includegraphics[width=6cm]{./imagenes/Alte.png}
+\end{center}
+
+\sangria{} Para el semiciclo positivo conducen D2 y D3 a través de la carga R:
+\begin{center}
+\includegraphics[width=6cm]{./imagenes/semic.png}
+\end{center}
+\sangria{} Y para el semiciclo negativo conducen D1 y D4 a través de la carga R cambiando el sentido de la onda y eliminando el semiciclo negativo:
+\begin{center}
+\includegraphics[width=6cm]{./imagenes/semisic2.png}
+\end{center}
+
+\paragraph{} Tensión a la salida del rectificador:
+
+\begin{center}
+    \includegraphics[width=6cm]{./imagenes/puentesal.png}
+\end{center}
+
+\begin{itemize}
+    \item $V_{cd}$: Es el valor medio de voltaje que se obtendría midiendo con un multímetro en voltaje de corriente continua.
+    \item $V_{m}$: Valor pico.
+    \item La frecuencia de la onda pulsante es el doble de la señal de entrada, 100Hz.
+\end{itemize}
+
+\saltoPag{}
+
+\sangria{} El voltaje pico inverso (VPI) es el voltaje máximo que pasara por el diodo en polarización inversa. 
+
+\begin{center}
+\includegraphics[width=5cm]{./imagenes/VPI.png}
+\end{center}
+
+\sangria{} Aplicando la ley de Kirchoff de voltaje en la malla externa:
+\begin{equation*}
+    V_m - 0,7 - VPI = 0 \Rightarrow VPI = V_m - 0,7
+\end{equation*}
+
+\sangria{} \textbf{Especificaciones de los diodos:} 
+\sangria{} La corriente máxima que entrega el transofrmador es de 1.5, 0.75A en cada diodo. Pero el regulador LM317 es de 1.5A pero puede suministrar durante un
+periodo corto de tiempo hasta 2.1 A, luego actúa la protección de sobrecorriente, lo que hace que superemos por un pequeño margen el limite de corriente de los diodos.
+Como no se fabrican diodos de 2A se utilizan de 3A.
+
+\subsection{Filtrado}
+La onda pulsante a la salida del rectificador no es apta para alimentar
+equipos electrónicos por ello se le agrega un capacitor que se carga y se descarga actunado como filtro para alizarla, la formula para calcular el mismo es:
+
+\begin{equation*}
+    C = \frac{I_L}{2 \cdot f_{salida} \cdot \Delta V}
+\end{equation*}
+\begin{itemize}
+    \item $I_L$: Corriente de carga.
+    \item $f_{salida}$: Frecuencia de la onda de salida del rectificador.
+    \item $\Delta V$: Voltaje pico a pico del riple.
+    \item $C$: Valor del capacitor
+\end{itemize}
+
+\sangria{} \textbf{Corriente Pico en los diodos:}
+\sangria{} Si aumentamos la capacidad del filtro disminuye la amplitud del riple y
+aumenta el voltaje promedio, pero esto afecta la corriente pico de los
+diodos como se puede observar en la grafica.
+
+\begin{center}
+    \includegraphics[width=5cm]{./imagenes/Dyc.png}
+    \includegraphics[width=5cm]{./imagenes/Dyc1.png}
+\end{center}
+
+\subsection{Regulador}
+\sangria{} La función del regulador de tensión es mantener constante la tensión de
+salida a pesar de las fluctuaciones de la corriente en la carga y de la
+tensión de línea.
+\sangria{} Por otra parte atenúa el riple en el orden de unas 1000 veces, por ejemplo
+si tenemos 3V de riple a la entrada del regulador a la salida quedaran 3mV.
+
+\begin{center}
+    \includegraphics[width=5cm]{./imagenes/rplrg.png}
+\end{center}
+
+\begin{itemize}
+    \item $\delta =V_{r_{p-p}}$: Voltaje pico a pico del riple.
+    \item $V_{prom}$: Voltaje promedio.
+    \item $V_{min}$: Voltaje mínimo.
+    \item $V_{reg}$: Voltaje regulado.
+    \item Margen: 3V para LM317.
+\end{itemize}
+
+\saltoPag{}
+
+\paragraph{} Conexiones del regulador LM317(1.2 A 37V):
+\vspace{0.5cm}
+\begin{center}
+    \includegraphics[width=6cm]{./imagenes/Diagrama317.png}
+\end{center}
+
+\sangria{} Algunas espidificaciones de la oja de datos:
+
+
+\begin{itemize}
+    \item $V_{REF}=1.25V$
+    \item $\theta_{JC} = 3 W/ ^\circ\mathrm{C} $
+    \item $I_{AJUS} = 50\mu A$
+    \item $V_{diferencial-m \tilde{a} xima}=\\V_{ENTRADA}-V_{SALIDA}=40V$
+    \item $T_{Juntura-m\tilde{a}xima}=125 ^\circ\mathrm{C}$
+    \item $I_1=I_{REF}=\frac{V_{REF}}{R_1}$
+    \item $I_{max}=1.5A$
+    \item LM317 encapsulado TO-220 disipa 15W y encapsulado TO-3 20W.
+\end{itemize}
+
+\begin{center}
+\textbf{Protecciones internas del LM317:}
+\end{center}
+\sangria{} \textbf{Protección de sobrecorriente:} significa que si se supera el limite permisible de corriente de salida actúa la protección interna evitando el daño del mismo.
+
+\sangria{} \textbf{Protección de sobre temperatura:} si las dimensiones del disipador no son acordes para evacuar el calor que se genera debido a la disipación de potencia, se eleva la temperatura de la juntura sobrepasando el límite permisible
+actuando la protección interna.
+
+\sangria{} \textbf{Área de operación segura de potencia del transistor de salida:} si
+bien no se puede estar excediendo el límite de corriente, puede ser que la
+magnitud del voltaje entre la entrada y la salida haga que se supere la potencia máxima permisible que puede disipar el regulador. Por lo que actúa la protección interna.
+
+\sangria{} Exepto en el regulador de funcionamiento, ni bien cesa la condición
+indeseable el regulador restablece su funcionamiento.
+
+\columnbreak
+\text{}

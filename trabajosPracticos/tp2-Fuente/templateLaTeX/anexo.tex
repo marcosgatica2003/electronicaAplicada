@@ -1,47 +1,185 @@
+\section{Imagenes de los ensayos}
+
+    % ========== BANCO DE PRUEBA ==========
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/banco_prueba_frente.jpg}
+    \captionof{figure}{Banco de pruebas utilizado en las mediciones.}
+\end{center}
+
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/fuente_completa.jpg}
+    \captionof{figure}{Fuente de alimentación ensamblada completamente.}
+\end{center}
+
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/fuente_sin_LM317.jpg}
+    \captionof{figure}{Fuente sin el integrado LM317.}
+\end{center}
+
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/reostato.jpg}
+    \captionof{figure}{Reóstato utilizado en las pruebas.}
+\end{center}
+
 \saltoPag{}
-\section{Anexo}
-    \indent{\textbf{Para el circuito utilizado anteriormente utilizar como entrada una función seno con 10$V_{pp}$ de amplitud y $50KHz$ de frecuencia.}}\\
-    \sangria{} Para obtener la información sobre el osciloscopio y el generador de señales utilizados consultar la bibliografía al final del informe.
-    \imagen{6cm}{./imagenes/señalGenerada.jpg}
-    \sangria{} El osciloscopio estaba configurado con una escala de $5v$ por división. Por lo que se puede ver que la señal generada es de 10$V_{pp}$.
-    \\
-    \sangria{} Una vez generada la onda, se conecta al circuito y se mide la tensión de salida en la salida de cada resistencia.
-    \begin{center} \textbf{---- Resistor $R_1$ ----} \end{center}
-    \imagen{6cm}{./imagenes/señal10K.jpg}
-    \sangria{} Para esta medición se utilizo una escala de $2v$ por división, por lo que al tener 2 cuadrados y la mitad de una linea de amplitud(una linea equivale a $0,4v$), la tensión de salida aproximada es de $8,4V_{pp}$.
-    \columnbreak{}
-    \begin{center} \textbf{---- Resistor $R_2$ y $R_3$ ----} \end{center}
-    \imagen{6cm}{./imagenes/señal4,7K.jpg}
-    \sangria{} Para esta medición se utilizo una escala de $2v$ por división, por lo que al tener 2 líneas de amplitud se puede decir que la tensión de salida esta alrededor de $1,6V_{pp}$, considerando una amplitud $0,8v$. La tensión es la misma en ambos resistores ya que los resistores en paralelo comparten la misma tensión
 
-    \midTitle{black}{Simulación en LTspice}
-    \imagen{6cm}{./imagenes/simuanexo.png}
-    \imagen{6cm}{./imagenes/senalesjuntas.png}
-    \sangria{} En la simulación se utiliza un tiempo de parada de $20\mu s$, ya que equivale a un ciclo de la señal.\\
-    \sangria{} En la imagen se puede ver la señal generada, de color verde; la señal a través del resistor $R_1$, de color rojo; y la señal a través de los resistores $R_2$ y $R_3$, de color azul. 
-    \saltoPag{}
-    \sangria{} Se puede observar que la tensión a través del resistor $R_1$ es de aproximadamente $8,4V_{pp}$, mientras que la tensión de salida de los resistores $R_2$ y $R_3$ es de $1,6V_{pp}$.
-    \imagen{5cm}{./imagenes/traves10k.png}
-    \imagen{5cm}{./imagenes/traves3.3k.png}
-    \noindent
-    \begin{center} \underline{Conclusiones} \end{center}
-    \sangria{} Se puede observar que la tensión pico a pico de esta señal sinusoidal es equivalente a la tensión que obtenemos cuando utilizamos una fuente de tensión continua. 
-    \sangria{} Respecto a la comparación entre la simulación y la señal visualizada en el osciloscopio, se puede observar que la tensión medida es muy similar a la obtenida en la simulación, lo que indica que el circuito se comporta de manera esperada. Además, aunque no sea exacto si solo se utilizara el osciloscopio se obtienen resultados lo suficientemente fiables. 
+% ========== PLACA ==========
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/placa_completa.jpg}
+    \captionof{figure}{Placa de circuito impreso terminada.}
+\end{center}
 
-    \subsection{Notas del documentador: Anexo}
-    
-    \sangria{} No tuvimos problemas al realizar las mediciones, los pasos fueron los siguientes:
-    \begin{enumerate}
-        \item Conectar el osciloscopio y el generador de señales al circuito.
-        \item Configurar el osciloscopio para medir la señal generada.
-        \item Medir la tensión de salida en cada resistor.
-        \item Comparar los resultados obtenidos con los de la simulación.
-        \item Repetir el proceso para cada resistor.
-        \item Tomar las fotos necesarias para documentar el proceso.
-        \item Guardar los resultados obtenidos.
-    \end{enumerate}
+% ========== TENSIONES BAJAS ==========
 
-    \columnbreak{}
-    \text{}
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/tension_baja_vacio.jpg}
+    \captionof{figure}{Tensión baja en vacío.}
+\end{center}
 
 
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/tension_baja_050.jpg}
+    \captionof{figure}{Medición de tensión baja (0.50 V).}
+\end{center}
+
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/tension_baja_075.jpg}
+    \captionof{figure}{Medición de tensión baja (0.75 V).}
+\end{center}
+
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/tension_baja_1,25.jpg}
+    \captionof{figure}{Medición de tensión baja (1.25 V).}
+\end{center}
+
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/tension_baja_1,50.jpg}
+    \captionof{figure}{Medición de tensión baja (1.50 V).}
+\end{center}
+
+
+% ========== CORRIENTES BAJAS ==========
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/corriente_baja_0,25.jpg}
+    \captionof{figure}{Medición de corriente baja (0.25 A).}
+\end{center}
+
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/corriente_baja_050.jpg}
+    \captionof{figure}{Medición de corriente baja (0.50 A).}
+\end{center}
+
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/corriente_baja_075.jpg}
+    \captionof{figure}{Medición de corriente baja (0.75 A).}
+\end{center}
+
+\saltoPag{}
+
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/corriente_baja_1,25.jpg}
+    \captionof{figure}{Medición de corriente baja (1.25 A).}
+\end{center}
+
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/corriente_baja_1,5.jpg}
+    \captionof{figure}{Medición de corriente baja (1.5 A).}
+\end{center}
+
+% ========== RIPPLE BAJO ==========
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/riplle_baja_osc_mult.jpg}
+    \captionof{figure}{Medición de ripple en baja tensión (osciloscopio y multímetro).}
+\end{center}
+
+% ========== TENSIONES ALTAS ==========
+
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/tension_alta_vacio_rao.jpg}
+    \captionof{figure}{Tensión alta en vacío.}
+\end{center}
+
+
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/tension_alta_0,50.jpg}
+    \captionof{figure}{Medición de tensión alta (0.50 V).}
+\end{center}
+
+\saltoPag{}
+
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/tension_alta_0,75.jpg}
+    \captionof{figure}{Medición de tensión alta (0.75 V).}
+\end{center}
+
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/tension_alta_1,25.jpg}
+    \captionof{figure}{Medición de tensión alta (1.25 V).}
+\end{center}
+
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/tension_alta_1.jpg}
+    \captionof{figure}{Medición de tensión alta (1 V).}
+\end{center}
+
+\vspace{-0.4cm}
+
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/tension_alta_1,5.jpg}
+    \captionof{figure}{Medición de tensión alta (1.5 V).}
+\end{center}
+
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/temperatura_capsula.jpg}
+    \captionof{figure}{Temperatura en la cápsula del componente.}
+\end{center}
+
+
+% ========== CORRIENTES ALTAS ==========
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/tension_corriente_alta_vacio.jpg}
+    \captionof{figure}{Medición de corriente alta en vacío.}
+\end{center}
+
+\saltoPag{}
+
+% ========== RIPPLE ALTO ==========
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/riplle_alta_multimetro.jpg}
+    \captionof{figure}{Medición de ripple en alta tensión (multímetro).}
+\end{center}
+
+\begin{center}
+    \centering
+    \includegraphics[width=0.9\linewidth]{./imagenes/riplle_alta_osc.jpg}
+    \captionof{figure}{Medición de ripple en alta tensión (osciloscopio).}
+\end{center}
+
+
+\columnbreak{}
+\text{}

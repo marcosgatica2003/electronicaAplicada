@@ -29,6 +29,9 @@
 \usepackage[table, xcdraw, dvipsnames]{xcolor}
 \usepackage{lastpage}
 \usepackage{hyperref}
+\usepackage{capt-of}
+
+\setkeys{Gin}{keepaspectratio}
 
 \include{newCommands}
 
@@ -37,21 +40,12 @@
     \include{configContenido}
     \include{indice}
     \saltoPag{}
-    \begin{multicols}{2} 
-        \input{sinRegulacion} 
-    \end{multicols}
-
-    \clearpage
-    \thispagestyle{empty}
-    \null
-    \vfill
-    \begin{center}
-        \Huge \textbf{Anexo: mediciones con osciloscopio}
-    \end{center}
-    \vfill
-    \clearpage
 
     \begin{multicols}{2}
+        \input{teorico1}
+        \saltoPag{}
+        \input{punto2}
+        \saltoPag{}
         \input{anexo}
     \end{multicols}
 

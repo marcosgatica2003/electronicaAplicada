@@ -1,3 +1,16 @@
-\babel@toc {nil}{}\relax 
-\contentsline {section}{\numberline {1}Anexo}{3}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Notas del documentador: Anexo}{4}{subsection.1.1}%
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Planteamiento e introducción teórica}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Transformador}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Rectificador}{1}{subsection.1.2}%
+\contentsline {paragraph}{}{1}{paragraph*.1}%
+\contentsline {subsection}{\numberline {1.3}Filtrado}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Regulador}{2}{subsection.1.4}%
+\contentsline {paragraph}{}{3}{paragraph*.2}%
+\contentsline {section}{\numberline {2}Punto 2: Mediciones y Ensayos}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Elementos utilizados}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Mediciones punto alto y punto bajo sin LM317}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Punto bajo de la fuente}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Punto alto de la fuente}{4}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Regulación LM317 (Punto Alto)}{4}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Conclusiones}{5}{section.3}%
+\contentsline {section}{\numberline {4}Imagenes de los ensayos}{6}{section.4}%
