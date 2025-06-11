@@ -1,0 +1,15 @@
+Del pdf fuentesII (segun nos dijo gonzales en la clase de consultas) van las paginas 1 a 6, de la 10 
+(desde Regulador lineal paralelo con realimentación.) a 11, 14 a 17, 28 a 31. 
+Todo lo que sea diseño no entra. Lo pueden descargar de aca https://drive.google.com/.../0B1GekSSMNw.../view.... 
+
+Del apunte fuentesIII van las paginas 2 a 5 (solo diagramas de bloques, circuito interno y hojas de datos no) 
+y de la 9 a 15 . El link de descarga es este https://drive.google.com/.../0B1GekSSMNw.../view... . 
+
+En cuanto al teórico me termine armando un resumen entre lo de Biolatto, Josho y Alem de un poco mas de 23 paginas
+(46 carillas en total) que habría que agregarle lo de estos pdf. 
+Estan los temas teoricos que te toma Celdran y Gonzales. No lo digitalice todavia.
+En cuanto al practico tanto lo que te toma Gonzales (incluido los choice) como lo que toma Olmos 
+con los que hay en el doc de Josho esta mas que bien. 
+Solo le agregue dos ejercicios de unos finales un convertidor de nivel con realimentacion positiva 
+y uno de operacionales que tenias que sacar la fl, fh y dibujar el bode. 
+Estos ejerccios mas algunos choice extra estan en un pdf de recopilación de finales que subi al grupo.
