@@ -1,0 +1,17 @@
+** Drc report for C:\Users\quitus\Dropbox\5R1\Electronica Aplicada 3\Practicos\TP5\kicad\Modulador_AM.kicad_pcb **
+** Created on  **
+
+** Found 3 DRC errors **
+ErrType(19): Pad cerca de pad
+    @ (93,920mm,53,000mm): Pad 3 en F.Cu, B.Cu, Interno, Sin cobre de P2
+    @ (96,460mm,53,000mm): Pad 2 en F.Cu, B.Cu, Interno, Sin cobre de P2
+ErrType(19): Pad cerca de pad
+    @ (96,460mm,53,000mm): Pad 2 en F.Cu, B.Cu, Interno, Sin cobre de P2
+    @ (99,000mm,53,000mm): Pad 1 en F.Cu, B.Cu, Interno, Sin cobre de P2
+ErrType(4): Pista cerca de pad
+    @ (111,633mm,67,183mm): Pista 1,000mm, red [/-Vo] (11) en capa F.Cu, longitud: 21,336mm
+    @ (117,000mm,65,000mm): Pad 1 en F.Cu, B.Cu, Interno, Sin cobre de C1
+
+** Found 0 unconnected pads **
+
+** End of Report **

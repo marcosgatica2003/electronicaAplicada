@@ -1,0 +1,178 @@
+(ExpressProject "Pot_08_02"
+  (ProjectVersion "19981106")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\1_shot.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\abm.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\adv_lin.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\ana_swit.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\analog.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\analog_p.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\anl_misc.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\anlg_dev.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\apex.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\bipolar.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\breakout.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\burr_brn.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\cd4000.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\cel.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\comlinr.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\darlngtn.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\dataconv.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\dig_ecl.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\dig_gal.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\dig_misc.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\dig_pal.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\dig_prim.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\diode.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\ebipolar.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\ediode.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\elantec.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\epwrbjt.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\filtsub.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\fwbell.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\harris.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\igbt.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\jbipolar.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\jdiode.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\jfet.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\jjfet.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\jopamp.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\jpwrbjt.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\jpwrmos.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\lin_tech.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\linedriv.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\magnetic.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\maxim.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\mix_misc.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\motor_rf.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\motoramp.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\motormos.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\motorsen.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\nat_semi.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\opamp.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\opto.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\phil_bjt.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\phil_fet.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\phil_rf.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\polyfet.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\pwrbjt.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\pwrmos.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\siemens.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\source.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\sourcstm.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\special.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\swit_rav.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\swit_reg.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\tex_inst.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\thyristr.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\tline.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\xtal.olb"
+        (Type "Schematic Library"))
+      (File "C:\UTI\ORCAD\CAPTURE\LIBRARY\PSPICE\zetex.olb"
+        (Type "Schematic Library")))
+    (NoModify)
+    (File ".\g_tp2.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x"))
+  (Folder "Outputs")
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles")
+    (Folder "Model Libraries"
+      (Sort User))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" "C:\Trabajos\Aplicada III\G_tp2\g_tp2.dsn")
+      (Path "Design Resources" "C:\Trabajos\Aplicada III\G_tp2\g_tp2.dsn"
+         "SCHEMATIC1")
+      (Select "Design Resources" "C:\Trabajos\Aplicada III\G_tp2\g_tp2.dsn"
+         "SCHEMATIC1" "PAGE2"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 320 439 -4 -28 0 200 0 300"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 2 3 -1 -1 -4 -28 108 773 108 441")
+        (Scroll "550 508")
+        (Zoom "100")
+        (Occurrence "/"))
+      (Path "C:\TRABAJOS\APLICADA III\G_TP2\G_TP2.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE2"))))

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<circuit>
+ <version value="0.99.30" />
+ <element>
+  <element>1</element>
+  <connection>1</connection>
+  <useloss>0</useloss>
+  <val1>142,500000</val1>
+  <val2>0,000000</val2>
+  <z0>0,000000</z0>
+  <vf>0,000000</vf>
+  <loss1>0,000000</loss1>
+  <mhz1>0,000000</mhz1>
+  <loss2>0,000000</loss2>
+  <mhz2>0,000000</mhz2>
+ </element>
+ <element>
+  <element>0</element>
+  <connection>0</connection>
+  <useloss>0</useloss>
+  <val1>0,000000</val1>
+  <val2>20,830000</val2>
+  <z0>0,000000</z0>
+  <vf>0,000000</vf>
+  <loss1>0,000000</loss1>
+  <mhz1>0,000000</mhz1>
+  <loss2>0,000000</loss2>
+  <mhz2>0,000000</mhz2>
+ </element>
+</circuit>

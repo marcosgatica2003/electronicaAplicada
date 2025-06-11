@@ -1,0 +1,1340 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass IEEEtran
+\begin_preamble
+
+%% bare_conf.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Some Computer Society conferences also require the compsoc mode option,
+% but others use the standard conference format.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/stfloats
+% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that the IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/pkg/dblfloatfix
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\end_preamble
+\options conference
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Diseño e implementación de un
+\begin_inset Newline newline
+\end_inset
+
+ Oscilador Hartley
+\end_layout
+
+\begin_layout Author
+Bustamante Hernán, Covaro Jorge, León Marcos, Prieto Daniel, Schinquel Gustavo
+\begin_inset Newline newline
+\end_inset
+
+UTN FRC
+\end_layout
+
+\begin_layout Abstract
+Se implementará un oscilador LC discreto tipo Hartley de 10 MHz, con un
+ transistor BF495.
+\end_layout
+
+\begin_layout Peer Review Title
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+El oscilador Hartley es un tipo de oscilador utilizado frecuentemente en
+ radio frecuencia, como receptor de radio.
+ Es implementado con transistores, y una de sus ventajas es su gran gama
+ de frecuencias.
+ Una característica de este oscilador es que para su funcionamiento utiliza,
+ en el circuito tanque, una bobina con derivacion central.
+ Este circuito tanque LC es el que determina la frecuencia.
+\end_layout
+
+\begin_layout Section
+Desarrollo
+\end_layout
+
+\begin_layout Standard
+A continuación se detallarán los criterios utilizados y los cálculos realizados
+ para diseñar el oscilador Hartley.
+\end_layout
+
+\begin_layout Subsection
+Criterios de oscilación.
+\end_layout
+
+\begin_layout Subsubsection
+Primer criterio
+\end_layout
+
+\begin_layout Standard
+Si la señal de realimentación es mayor que la de entrada, y en fase con
+ ella, se iniciarán las oscilaciones y crecerán en amplitud, hasta que la
+ saturación reduzca la ganancia alrededor del bucle de realimentación a
+ la unidad.
+ Un circuito oscilará cuando exista una trayectoria de realimentación que
+ proporcione al menos una ganancia de bucle unitaria, con desplazamiento
+ de fase nulo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename primercriterio.png
+	lyxscale 50
+	scale 52
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Primer Criterio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Segundo criterio
+\end_layout
+
+\begin_layout Standard
+Un oscilador es un amplificador inestable, situación que se trata de evitar
+ en la mayoría de los casos.
+ Por lo tanto, el segundo criterio es que el factor de estabilidad Stern
+ (factor para parámetros Y).
+ Si el circuito es potencialmente inestable o no, ciertos valores admitancia
+ de carga y fuente pueden ocasionar oscilaciones en el circuito, por eso,
+ para analizar la estabilidad relativa del circuito se utiliza el factor
+ de estabilidad de Stern K.
+ Este factor tiene en cuenta admitancia de fuente y cargas de valor finito
+ conectadas al transistor.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+K=\frac{2(g_{11}+G_{S})(g_{22}+G_{L})}{\left|y_{12}y_{21}\right|+Re\left\{ y_{12}y_{21}\right\} }
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $K<1$
+\end_inset
+
+, el circuito es potencialmente inestable.
+\begin_inset Newline newline
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Tercer criterio
+\end_layout
+
+\begin_layout Standard
+Un oscilador es un amplificador que, aunque la entrada sea nula, la salida
+ no será nula.
+ Matemáticamente esto equivale a que el determinante de las ecuaciones de
+ corrientes de malla, o tensiones de nodo se hacen cero.
+ También se llama criterio de ganancia infinita.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename tercercriterio.png
+	lyxscale 40
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tercer Criterio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Cuarto criterio
+\end_layout
+
+\begin_layout Standard
+Finalmente, si cualquier circuito oscilador potencial se separa artificialmente
+ en una porción activa y una carga, la impedancia de salida de la parte
+ activa tendrá una parte real negativa cuando se satisfagan las condiciones
+ para la oscilación.
+ Esta es una condición necesaria, pero no suficiente.
+ Una onda de corriente puede circular indefinidamente por un lazo de impedancia
+ cero, lo mismo se puede decir que una tensión senoidal puede persistir
+ indefinidamente en un nodo de admitancia nula.
+\end_layout
+
+\begin_layout Subsection
+Especificaciones
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f_{0}=10\,MHz$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $V_{CC}=12\,V$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $R_{L}=50\,\Omega$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $P_{L}=5\,mW$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Trazado del circuito
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename trazadodelcircuito.png
+	lyxscale 50
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Oscilador Hartley
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Modelo equivalente de RF
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Modeloequivalente.png
+	lyxscale 50
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Modelo equivalente de RF, pequeña señal.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Selección de los componentes
+\end_layout
+
+\begin_layout Standard
+Se selecciona el transistor BF495, ya que poseemos sus hojas de datos con
+ los parametros Y, y además, cumple con los requerimientos de frecuencia
+ y potencia.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $F_{T(typ)}=200\,MHz\gg10\,MHz$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $P_{C(máx)}=300\,mW\gg5\,mW$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $h_{FE(typ)}=75$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Cálculo del resto de componentes
+\end_layout
+
+\begin_layout Subsubsection
+Determinación de la polarización
+\end_layout
+
+\begin_layout Standard
+Determinamos la polarización de forma tal que se simplifique la lectura
+ de los parametros Y en la hoja de datos, los cuales estan dados para 1,3
+ y 5 mA.
+\end_layout
+
+\begin_layout Standard
+Por lo tanto obtenemos:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $I_{C}=3\,mA$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $V_{CE}=8\,V$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $P_{C\,(sin\,señal)}=24\,mW\ll P_{C-Máx}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+R1 y R2
+\end_layout
+
+\begin_layout Standard
+Haciendo uso de las leyes de Kirchhoff podemos determinar las ecuaciones
+ para calcular las resistencias de base y colector.
+ Para nuestro caso:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $R_{1}=1,2\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $R_{2}=180\,k\Omega$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+C4
+\end_layout
+
+\begin_layout Standard
+Sabiendo que para máxima excursión simétrica la tensión pico de la rama
+ RC de la carga corresponde al valor de 
+\begin_inset Formula $V_{CE}$
+\end_inset
+
+, podemos calcular C4.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{4}=27\,pF
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta rama RC serie, se convierte a su equivalente en paralelo para poder
+ continuar con el cálculo de la bobina.
+\end_layout
+
+\begin_layout Subsubsection
+L
+\end_layout
+
+\begin_layout Standard
+Suponemos algunos valores de capacitancia, que luego serán recalculados.
+ Analizando el modelo equivalente podemos determinar la ecuación de la frecuenci
+a de oscilación y calcular L.
+\end_layout
+
+\begin_layout Standard
+En nuestro caso: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L=2,9\,uH
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para el armado de la bobina se tienen en cuenta, el diametro del cable utilizado
+, el diametro de las espiras, y la separacion entre las mismas.
+ Se opta por utilizar los siguientes valores.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $ø=0,5\,mm$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $D=0,72\,cm$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con estos valores se procede a calcular el numero de espiras mediante la
+ siguiente fórmula:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L=\frac{D^{2}N^{2}}{\lambda+0.45D}10^{-2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde obtenemos que: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N=35
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Otro punto importante respecto a la bobina es el cálculo de su Rp, lo cual
+ se realiza mediante el monograma de Packmann.
+\end_layout
+
+\begin_layout Standard
+Por medio de las carácteristicas físicas de la bobina, podemos obtener el
+ Q de la misma, el cual es la relacion entre la resistencia y la reactancia
+ asociada.
+\end_layout
+
+\begin_layout Standard
+Para nuestra bobina:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $R_{P}=6,79\,k\Omega$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename monograma.png
+	lyxscale 50
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Monograma de Packmann
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+C3 y N1-N2
+\end_layout
+
+\begin_layout Standard
+Con las caracteristicas de la bobina (Rp, D, N, ø) podemos continuar con
+ el cálculo del capacitor que forma parte del circuito tanque.
+ Como ya fue mencionado, con la hoja de datos podemos determinar los parámetros
+ Y del transistor para nuestras condiciones de trabajo.
+\end_layout
+
+\begin_layout Standard
+Ahora procedemos a utilizar la hoja de calculos, que nos permite saber el
+ valor de C que cumple con los criterios de oscilación.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{3}=33\,pF
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+C2 y C1
+\end_layout
+
+\begin_layout Standard
+C2 está en serie con la base, por lo que adoptamos el siguiente criterio:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X_{C2}\ll\frac{1}{\left|y_{ie}\right|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Elegimos 
+\begin_inset Formula $C_{2}=10\,nF$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para calcular 
+\begin_inset Formula $C_{1}$
+\end_inset
+
+adoptamos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X_{C1}\ll R_{P}||\,R'_{L}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde obtenemos que 
+\begin_inset Formula $C_{1}\gg4,61\,pF$
+\end_inset
+
+ por lo tanto 
+\end_layout
+
+\begin_layout Standard
+adoptamos 
+\begin_inset Formula $C_{1}=10\,nF$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Construcción y medición de la bobina
+\end_layout
+
+\begin_layout Standard
+Para la construccion debemos tener cuidado en la orientación de la misma
+ luego de la derivación, para que los campos magnéticos se sumen entre si.
+ La medición de la misma se efectúa con un VNA (Vector Network Analyzer),
+ dando resultados muy aproximados.
+\end_layout
+
+\begin_layout Subsection
+Circuito final
+\end_layout
+
+\begin_layout Standard
+A continuación se muestra el esquemático del circuito final resultante:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename circuitofinal.png
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquemático
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En el siguiente gráfico se puede observar que se reemplaza la resistencia
+ de base, por una resistencia de menor valor en serie con un trimpot, esto
+ se hace así para poder polarizar el transistor en los valores preestablecidos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename osciladorfisico.png
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Señal obtenida
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename simulacion.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Señalobtenida.jpg
+	lyxscale 30
+	scale 20
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Osciloscopio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusión
+\end_layout
+
+\begin_layout Standard
+El oscilador Hartley constituye un diseño práctico, fácil y de rapida implementa
+ción.
+ Los componentes utilizados se pueden conseguir facilmente en el mercado
+ a excepción de la bobina, la cual se tuvo que diseñar mediante los métodos
+ presentados anteriormente, teniendo especial cuidado en la separación de
+ sus espiras y el diámetro, que ocasionaban variaciones considerables.
+ Una de las complicaciones que tiene el Hartley es que posee bobinas acopladas
+ y son mas dificiles de implementar que un oscilador tipo Clapp o Colpitts.
+ Algunas ventajas que encontramos en este tipo de oscilador es su frecuencia
+ variable y su amplitud de salida constante, y sus desventajas son su gran
+ contenido armónico lo cual no permite una onda senoidal pura.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "IEEEhowto:kopka"
+
+\end_inset
+
+ Apuntes de clases de Ing.
+ Rabinobich.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+hskip
+\end_layout
+
+\end_inset
+
+ 1em plus 0.5em minus 0.4em
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+relax
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-3"
+
+\end_inset
+
+Estado sólido en ingeniería de radiocomunicación, Krauss/Bostian/Raab.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+Vademecum de radio y electricidad, Emilio Packmann.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+BF 495 Datasheet.
+\end_layout
+
+\end_body
+\end_document
