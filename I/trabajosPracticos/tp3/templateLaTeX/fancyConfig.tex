@@ -1,3 +1,11 @@
+%%%%%%%%%%%%%% fancyConfig.tex %%%%%%%%%%%%%%%%
+%% Archivo de configuración de fancy para el %%
+%% pagestyle, de templateLatex.              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Por marcosgatica2003
+% Link del repositorio: https://github.com/marcosgatica2003/gaticonStandards
+
+
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 \definecolor{textoGris}{HTML}{222222}
@@ -5,13 +13,13 @@
 \fancypagestyle{fancy}{
     \fancyhf{}
 
-    \fancyfoot[R]{[Gatica M.] [\textbf{pág.\ \thepage} de \pageref{LastPage}]}
+    \fancyfoot[R]{[Parfait M.L.][Rao V.][Gatica M.] [\textbf{pág.\ \thepage} de \pageref{LastPage}]}
 
     \fancyfoot[C]{
-        \begin{tikzpicture}[remember picture, overlay]
-            \draw[gray!30, line width=0.4pt]
-                (0cm, 1cm) -- (0cm, 25cm);
-        \end{tikzpicture}
+    %     \begin{tikzpicture}[remember picture, overlay]
+    %         \draw[gray!30, line width=0.4pt]
+    %             (0cm, 1cm) -- (0cm, 25cm);
+    %     \end{tikzpicture}
     }
 
     \fancyhead[L]{

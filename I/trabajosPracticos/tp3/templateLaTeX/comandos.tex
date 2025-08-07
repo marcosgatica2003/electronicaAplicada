@@ -1,3 +1,11 @@
+%%%%%%%%%%%%%% comandos.tex %%%%%%%%%%%%%%%%
+%% Archivo de comandos útiles para        %%
+%% templateLatex.                         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Por marcosgatica2003
+% Link del repositorio: https://github.com/marcosgatica2003/gaticonStandards
+
+
 \renewcommand{\theenumi}{\Roman{enumi}}
 \definecolor{gold}{rgb}{1.0, 0.84, 0.0}
 \newcommand{\resistencia}[4]{
@@ -89,10 +97,8 @@
 
 \newcommand{\imagen}[3][]{
     \begin{center}
-        \begin{tikzpicture}
-            \node[inner sep=2pt] (image) {\includegraphics[width=#2]{#3}};
-            \draw[line width=1pt, color={rgb:red,251;green,73;blue,52}] (image.south west) rectangle (image.north east);
-        \end{tikzpicture}
+        \small
+        \includegraphics[width=#2]{#3}
         \ifx\\#1\\
             \captionof{figure}{}
         \else
