@@ -67,10 +67,10 @@
 }
 
 \newcommand{\ecuacion}[1]{
-    \begin{center}
-        $#1$
-    \end{center}
+%Usar \begin{flalign*} si se quiere ecuaciones sin que vayan al medio
+            \[#1\]
 }
+\newcommand{\resaltar}[1]{\colorbox{yellow!50}{$\displaystyle #1$}}
 
 \newcommand{\saltoPag}[0]{%
     \newpage\noindent\thispagestyle{fancy}%

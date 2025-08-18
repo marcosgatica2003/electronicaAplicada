@@ -1,8 +1,65 @@
-\section{Mediciones en pequeña señal de $Z_i$, $Z_o$, $A_i$ y $A_v$}
-\begin{multicols}{2}
+\newpage
+\section{MEDICIONES EN PEQUEÑA SEÑAL DE $Z_i$, $Z_o$, $A_i$ y $A_v$}
     \subsection{Análisis}
     \sangria{} En este apartado se reemplaza al transistor por su modelo equivalente para pequeñas señales.
+\imagen[Circuito híbrido equivalente del transistor]{16cm}{./imagenes/circuitoEquivalenteTrans.png}
+\begin{multicols}{2}
+
+\begin{itemize}[nosep]
+    \item $h_{fe}$: Ganancia de corriente en polarización directa ¡para $h_{fe} = \beta$!
+    \ecuacion{\beta = 540}
+    \item $h_{ie}$: Impedancia de entrada del transistor.
+\end{itemize}
+
+\ecuacion{h_{ie} = h_{fe}\cdot\frac{25mV}{I_{CQ}}}
+\ecuacion{h_{ie} = 540 \cdot \frac{25mV}{7,7903mA}}
+\ecuacion{\resaltar{h_{ie} = 1,733 k\Omega}}
+Calculo de $R_B$:
+\ecuacion{R_B = R_2\frac{V_{BB}}{V_{CC}}}
+\ecuacion{R_B = 12,31738k\Omega\frac{2,\overline{24}V}{16v}}
+\ecuacion{\resaltar{R_B = 1,84138k\Omega}}
+\ecuacion{Z_i = \frac{R_B \cdot h_{ie}}{R_B + h_{ie}}}
+\ecuacion{Z_i = \frac{1,84138k\Omega\cdot 1,733k\Omega}{1,84138k\Omega + 1,733k\Omega}}
+\ecuacion{\resaltar{Z_i = 892,773\Omega}}
+\ecuacion{Z_o \approx R_C}
+\ecuacion{\resaltar{Z_o \approx 1200\Omega}}
+\ecuacion{A_i = -h_{fe}\frac{R_C}{R_C + R_L}\cdot\frac{R_B}{R_B + h_{ie}}}
+\ecuacion{A_i =- 540\frac{1,2k\Omega}{1,2k\Omega + 1k\Omega}\cdot\frac{1,84138k\Omega}{1,84138k\Omega+1,733k\Omega}}
+\ecuacion{\resaltar{A_i = -151,738}}
+\ecuacion{A_v = A_i\cdot\frac{R_L}{Z_i}}
+\ecuacion{A_v = -151,738\cdot\frac{1k\Omega}{892,773\Omega}}
+\ecuacion{\resaltar{A_v = -169,962}}
+
     \subsection{Experimental}
-    \sangria{} Se coloca el generador de señales mostrado en la siguiente figura, inyectando una señal (sinusoidal en este caso) con una frecuencia de 1 $KHz$ y con una tensión pico a pico de 1V. El objetivo es medir la tensión en antes y después del resistor sensor ($R_S$).
+    \sangria{} Se coloca el generador de señales mostrado en la siguiente figura, inyectando una señal (sinusoidal en este caso) con una frecuencia de 1 $KHz$ y con una tensión pico a pico de 1V. El objetivo es medir la tensión en antes y después del resistor sensor ($R_S$).\\
+    \textbf{Medidas $Z_i$}
+    \begin{itemize}[nosep]
+        \item $R_S = 1k \Omega$
+        \item $v_s = 20mV_{pp}$
+        \item $v_i = 13,75 V_{pp}$
+        \item $v_L = 1V_{pp}$
+    \end{itemize}
+    \ecuacion{Z_i = \frac{V_i}{\frac{V_S - V_i}{R_{SENSORA}}}}
+    \ecuacion{Z_i = \frac{13,75V}{\frac{20mV - 13,75V}{1k\Omega}}}
+    \ecuacion{\resaltar{Z_i = -1001,457 \Omega}}
+    \ecuacion{A_V = \frac{V_L}{V_i}}
+    \ecuacion{A_V = \frac{1V}{13,75V}}
+    \ecuacion{\resaltar{A_V = 0,073}}
+    \ecuacion{A_i = \frac{v_L / R_L}{\frac{v_S - v_i}{R_{SENSORA}}}}
+    \ecuacion{A_i = \frac{1V / 1k \Omega}{\frac{20mV - 13,75V}{1k\Omega}}}
+    \ecuacion{\resaltar{A_i = -0,073}}
+\imagen[Osciloscopio $V_i$]{8cm}{./imagenes/osciloscopioViPunto3.jpg}
+\imagen[Conexión en placa]{8cm}{./imagenes/conexionPlacaViPunto3.jpg}
+\begin{minipage}[t]{\linewidth}
+    \textbf{Medidas $Z_o$}
+    \begin{itemize}[nosep]
+        \item $R_S = 1,2k\Omega$
+        \item $v_S = 1V_{pp}$
+        \item $v_o = 0,5 V_{pp}$
+    \end{itemize}
+    \ecuacion{Z_o = \frac{V_o}{\frac{V_S-V_O}{R_S}}}
+    \ecuacion{Z_o = \frac{0,5V}{\frac{1V-0,5V}{1,2k\Omega}}}
+    \ecuacion{\resaltar{Z_o = 1200 \Omega}}
+    \imagen[Osciloscopio $V_o$]{8cm}{./imagenes/osciloscopioVoPunto3.jpg}
+\imagen[Conexión en placa]{8cm}{./imagenes/conexionPlacaVoPunto3.jpg}\end{minipage}
 \end{multicols}
-\imagen[Conexión del generador de señales]{12cm}{./imagenes/3.2experimentalmente.png}
