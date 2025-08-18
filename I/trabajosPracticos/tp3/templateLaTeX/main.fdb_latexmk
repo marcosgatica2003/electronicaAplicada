@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1755521068.11585 "main.tex" "main.pdf" "main" 1755521078.36156 0
+["pdflatex"] 1755522022.24878 "main.tex" "main.pdf" "main" 1755522032.46137 0
   "/etc/texmf/web2c/texmf.cnf" 1754052350.57297 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -233,10 +233,10 @@
   "imagenes/simulacion_norm.png" 1755510122.37847 17670 0fb0acfd6d982bb5e0ed5daafeb0aeca ""
   "imagenes/utn.png" 1753650351.55595 3022 4bc879586cb2d4b86fc8e9ff2214f52f ""
   "indiceConfig.tex" 1754577607.38314 466 3a6b312c1f9c50e987643ff6bd68b98b ""
-  "main.aux" 1755521078.20197 3653 24497b1fe20a5f5642c471ca54fa791e "pdflatex"
+  "main.aux" 1755522032.2848 3653 24497b1fe20a5f5642c471ca54fa791e "pdflatex"
   "main.tex" 1754577713.32896 584 1578277699ec895ddcd814b9212c3bc3 ""
-  "main.toc" 1755521078.20197 1070 c6150760e0d420f92f8f4c248cff393f "pdflatex"
-  "medicionesEnPequenaSenal.tex" 1755521066.21821 3157 881e0a6a96caf37426ffb8cece20b294 ""
+  "main.toc" 1755522032.2888 1070 c6150760e0d420f92f8f4c248cff393f "pdflatex"
+  "medicionesEnPequenaSenal.tex" 1755522020.36106 3165 00aa0a893c28813f198a165466d0b13a ""
   "packages.tex" 1755470726.20155 1004 c23b84799e89893dc6aaae5c5d3cbfc1 ""
   "pythontex-files-main/main.pytxmcr" 0 -1 0 ""
   (generated)

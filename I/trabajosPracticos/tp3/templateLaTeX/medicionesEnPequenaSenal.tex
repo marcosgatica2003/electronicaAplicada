@@ -36,18 +36,18 @@ Calculo de $R_B$:
     \begin{itemize}[nosep]
         \item $R_S = 1k \Omega$
         \item $v_s = 20mV_{pp}$
-        \item $v_i = 13,75 V_{pp}$
+        \item $v_i = 13,75 mV_{pp}$
         \item $v_L = 1V_{pp}$
     \end{itemize}
     \ecuacion{Z_i = \frac{V_i}{\frac{V_S - V_i}{R_{SENSORA}}}}
-    \ecuacion{Z_i = \frac{13,75V}{\frac{20mV - 13,75V}{1k\Omega}}}
-    \ecuacion{\resaltar{Z_i = -1001,457 \Omega}}
+    \ecuacion{Z_i = \frac{13,75mV}{\frac{20mV - 13,75mV}{1k\Omega}}}
+    \ecuacion{\resaltar{Z_i = 2200 \Omega}}
     \ecuacion{A_V = \frac{V_L}{V_i}}
-    \ecuacion{A_V = \frac{1V}{13,75V}}
-    \ecuacion{\resaltar{A_V = 0,073}}
+    \ecuacion{A_V = \frac{1V}{13,75mV}}
+    \ecuacion{\resaltar{A_V = 72,\overline{72}}}
     \ecuacion{A_i = \frac{v_L / R_L}{\frac{v_S - v_i}{R_{SENSORA}}}}
-    \ecuacion{A_i = \frac{1V / 1k \Omega}{\frac{20mV - 13,75V}{1k\Omega}}}
-    \ecuacion{\resaltar{A_i = -0,073}}
+    \ecuacion{A_i = \frac{1V / 1k \Omega}{\frac{20mV - 13,75mV}{1k\Omega}}}
+    \ecuacion{\resaltar{A_i = 160}}
 \imagen[Osciloscopio $V_i$]{8cm}{./imagenes/osciloscopioViPunto3.jpg}
 \imagen[Conexión en placa]{8cm}{./imagenes/conexionPlacaViPunto3.jpg}
 \begin{minipage}[t]{\linewidth}
