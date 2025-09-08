@@ -6,7 +6,7 @@
 \begin{multicols}{2}
 
 \begin{itemize}[nosep]
-    \item $h_{fe}$: Ganancia de corriente en polarización directa ¡para $h_{fe} = \beta$!
+    \item $h_{fe}$: Ganancia de corriente en polarización directa para $h_{fe} = \beta$
     \ecuacion{\beta = 540}
     \item $h_{ie}$: Impedancia de entrada del transistor.
 \end{itemize}
@@ -14,18 +14,14 @@
 \ecuacion{h_{ie} = h_{fe}\cdot\frac{25mV}{I_{CQ}}}
 \ecuacion{h_{ie} = 540 \cdot \frac{25mV}{7,7903mA}}
 \ecuacion{\resaltar{h_{ie} = 1,733 k\Omega}}
-Calculo de $R_B$:
-\ecuacion{R_B = R_2\frac{V_{BB}}{V_{CC}}}
-\ecuacion{R_B = 12,31738k\Omega\frac{2,\overline{24}V}{16v}}
-\ecuacion{\resaltar{R_B = 1,84138k\Omega}}
 \ecuacion{Z_i = \frac{R_B \cdot h_{ie}}{R_B + h_{ie}}}
-\ecuacion{Z_i = \frac{1,84138k\Omega\cdot 1,733k\Omega}{1,84138k\Omega + 1,733k\Omega}}
-\ecuacion{\resaltar{Z_i = 892,773\Omega}}
+\ecuacion{Z_i = \frac{9,720039k\Omega\cdot 1,733k\Omega}{9,720039k\Omega + 1,733k\Omega}}
+\ecuacion{\resaltar{Z_i = 1470.77\Omega}}
 \ecuacion{Z_o \approx R_C}
 \ecuacion{\resaltar{Z_o \approx 1200\Omega}}
 \ecuacion{A_i = -h_{fe}\frac{R_C}{R_C + R_L}\cdot\frac{R_B}{R_B + h_{ie}}}
-\ecuacion{A_i =- 540\frac{1,2k\Omega}{1,2k\Omega + 1k\Omega}\cdot\frac{1,84138k\Omega}{1,84138k\Omega+1,733k\Omega}}
-\ecuacion{\resaltar{A_i = -151,738}}
+\ecuacion{A_i =- 540\frac{1,2k\Omega}{1,2k\Omega + 1k\Omega}\cdot\frac{9,720039k\Omega}{9,720039k\Omega+1,733k\Omega}}
+\ecuacion{\resaltar{A_i = -249.976}}
 \ecuacion{A_v = A_i\cdot\frac{R_L}{Z_i}}
 \ecuacion{A_v = -151,738\cdot\frac{1k\Omega}{892,773\Omega}}
 \ecuacion{\resaltar{A_v = -169,962}}

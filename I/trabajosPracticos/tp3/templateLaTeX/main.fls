@@ -1,4 +1,4 @@
-PWD /home/marcosgatica/facultadUTN/electronicaAplicada/I/trabajosPracticos/tp3/templateLaTeX
+PWD /home/valentino/Documents/Facultad/3ro/gatica/electronicaAplicada/I/trabajosPracticos/tp3/templateLaTeX
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
@@ -478,6 +478,13 @@ INPUT ./imagenes/rectaDeCargas.png
 INPUT ./imagenes/rectaDeCargas.png
 INPUT ./imagenes/rectaDeCargas.png
 INPUT ./imagenes/rectaDeCargas.png
+INPUT ./imagenes/logoDepartamentoElectronica.png
+INPUT ./imagenes/logoDepartamentoElectronica.png
+INPUT ./imagenes/logoDepartamentoElectronica.png
+INPUT ./imagenes/logoDepartamentoElectronica.png
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT ./medicionesEnPequenaSenal.tex
 INPUT ./medicionesEnPequenaSenal.tex
 INPUT ./medicionesEnPequenaSenal.tex
@@ -487,9 +494,6 @@ INPUT ./imagenes/logoDepartamentoElectronica.png
 INPUT ./imagenes/logoDepartamentoElectronica.png
 INPUT ./imagenes/logoDepartamentoElectronica.png
 INPUT ./imagenes/logoDepartamentoElectronica.png
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT ./imagenes/circuitoEquivalenteTrans.png
 INPUT ./imagenes/circuitoEquivalenteTrans.png
 INPUT ./imagenes/circuitoEquivalenteTrans.png

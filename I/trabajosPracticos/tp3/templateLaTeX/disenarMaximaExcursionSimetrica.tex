@@ -101,11 +101,21 @@ Si resolvemos $R_2$:
 \ecuacion{R_2 = \frac{15 V}{2,24 V} \cdot \frac{180 \cdot \beta}{10}}
 \ecuacion{\resaltar{R_2 = 120,4054055 \Omega \cdot \beta}}
 
+
+
 			\sangria{} Con el mismo modo si resolvemos $R_1$ queda que $R_1=21,163893\Omega \cdot \beta$, entonces $R_1 y R_2$ quedan:
             \begin{itemize}[nosep]
 				\item $R_2 = 120,4054055\Omega \cdot \beta$
 				\item $R_1 = 21,163893\Omega \cdot \beta$
             \end{itemize}
+
+
+            \sangria{}Por último podemos calcular el valor de $R_B$ ajustado a nuestro $\beta$para asegurarnos que los cálculos esten correctos, además de que nos servira mas adelante para el cálculo analítico de la $A_i$:
+            \begin{align*}
+            R_B &= \frac{R_1 \cdot R_2}{R_1+R_2}\\
+            R_B &= \frac{11,4285022 k\Omega \cdot 65,0189189 k\Omega}{11,4285022 k\Omega+ 65,0189189 k\Omega}\\
+            R_B &= 9.720039 k\Omega\\
+            \end{align*}
 
 
             \textbf{Valores ajustados al $\beta$}
@@ -123,17 +133,20 @@ Si resolvemos $R_2$:
 
 			\textbf{Valores Importantes Obtenidos}
             \begin{itemize}[nosep]
-            	\item $I_{CQMES} = $
-            	\item $V_{CE} = $
+            	\item $I_{CQMES} 7.7903mA $
+            	\item $V_{CE} = 4.2493V$
 				\item $R_1 = 12 k\Omega$
 				\item $R_2 = 68 k\Omega$
 			\end{itemize}
+
+			\sangria{}Los valores que remarcamos como importantes son los que serán comparados con la simulaciónes del siguiente punto.
+			\sangria{}Los valores normalizados los elejimos en base a los más cercanos a los ideales, la siguiente consigna nos pone un límite, en el cual los resultados de las simulaciones no deben estar fuera de un rango de $\pm 10\%$.
+
 		\subsection{Simulación e Implementación}
-        \sangria{}Se hicieron 2 simulaciones, una con los valores ideales de las resistencias obtenidas a partir de las reglas de diseño y otra con los valores normalizados más cercanos de las mismas, los circuitos se simularon en ltspice, lo que pretendemos con las simulaciones es que los valores calculados no difieran del $\%10$ con respecto a las simulaciones.
+        \sangria{}Se hicieron 2 simulaciones del circuito, la primera se realizó, con los valores ideales de las resistencias obtenidas a partir de las reglas de diseño ,y la segunda, con los valores normalizados más cercanos de las mismas. Los circuitos se simularon en el sowftware Ltspice, lo que pretendemos con las simulaciones es que los valores calculados no difieran del $\pm \%10$ con respecto a las simulaciones.
 
 			\subsubsection{Simulación ideal}
 				\imagen[Simulación ideal]{7cm}{./imagenes/simulacion_ideal.png}
-				%\imagen[Valores obtenidos en la simulacion]{5cm}{./imagenes/}
 
 				\textbf{Valores Obtenidos}
                 \begin{itemize}[nosep]
@@ -144,8 +157,8 @@ Si resolvemos $R_2$:
 					\item $I_{R_2} = 198.77977\mu A$
 				\end{itemize}
 			\subsubsection{Simulación normalizada}
-            \begin{minipage}[t]{\linewidth}\imagen[Simulación normalizada]{6cm}{./imagenes/simulacion_norm.png}\end{minipage}\columnbreak{}
-				%\imagen[Valores obtenidos en la simulacion]{5cm}{./imagenes/}
+            \imagen[Simulación normalizada]{6cm}{./imagenes/simulacion_norm.png}
+
 				\textbf{Valores Obtenidos}
                 \begin{itemize}[nosep]
 					\item $V_{CE} = 4.6084311 V$
@@ -155,8 +168,6 @@ Si resolvemos $R_2$:
 					\item $I_{R_2} = 190.07392\mu A$
 				\end{itemize}
 
-
-
 		\subsection{Implementación}
 			\sangria{}Cuando implementamos el circuito no medimos directamente los valores, sino que medimos las tensiones claves con respecto a masa para tener una medición más acertada de los valores.
 
@@ -164,7 +175,7 @@ Si resolvemos $R_2$:
             \begin{itemize}[nosep]
 				\item $V_{CC} = 14.56V$
                 \item $V_{C} = 6,12V$
-                \item $V_{E}= 17.159407\mu A1.32V$
+                \item $V_{E}= 1.32V$
                 \item $V_{B} = 1.99V$\\[5pt]
             \end{itemize}
 
@@ -218,10 +229,48 @@ Si resolvemos $R_2$:
 \ecuacion{I_{B} = I_{R_2}-I_{R_1}}
 \ecuacion{I_{B} = 184.85\mu A-166.58\mu A}
 \ecuacion{\resaltar{I_{B} = 18.27 \mu A}}
+
+
+				\subsubsection{Cálculos de tolerancia}
+				\sangria{}Para saber el rango de valores aceptables debemos realizar la siguiente operación ($X \pm [X \cdot 0.1] $), siendo x el valor que queremos comparar.
+				Como explicamos antes, los resultados ideales calculados se comparan contra los de la simulación ideal, mientras que los valores obtenidos en la simulación normalizada se comparan contra los valores medidos.
+
+				\textbf{Rango de Comparación:}valores ideales
+				\begin{itemize}
+					\item $I_{CQ}=[7.01127 - 8.56933]mA$
+					\item $V_{CE}=[3.82437 - 4.67423]V$
+				\end{itemize}
+
+				\textbf{Rango de Comparación:}valores simulados obtenidos de la simulación normalizada
+				\begin{itemize}
+					\item $I_{CQ}=[6.775 - 8.2806]mA$
+					\item $V_{CE}=[4.1475 - 5.06]V$
+					\item $I_{R_1}=[155.6226 - 190.2054]\mu A$
+					\item $I_{R_2}=[171.0665 - 209.081]\mu A$
+					\item $I_{B}=[15.4434 - 18.8753]\mu A$
+				\end{itemize}
+				\sangria{} Los valores $I_{R_1}, I_{R_2}$ e $ I_{B}$ se agregaron para tener más confiabilidad en las mediciones, pero nuestro foco de antención siempre es el punto Q, dados por $I_{CQ} y V_{CQ}$.
+
+% \end{multicols}
+% \begin{table}[]
+% \resizebox{\columnwidth}{!}{%
+% \begin{tabular}{|l|l|l|l|l|l|}
+% \hline
+%  &
+%   \cellcolor[HTML]{9698ED}{\color[HTML]{000000} $V_{CE}$} &
+%   \cellcolor[HTML]{9698ED}{\color[HTML]{000000} $I_{CQ}$} &
+%   \cellcolor[HTML]{9698ED}{\color[HTML]{000000} $I_{R_1}$} &
+%   \cellcolor[HTML]{9698ED}$I_{R_2}$ &
+%   \cellcolor[HTML]{9698ED}$I_{B}$ \\ \hline
+% \cellcolor[HTML]{329A9D}Sim-ideal      & $4.6041008 V$ & $7.5310208 mA$ & $181.61203\mu A$ & $198.77977\mu A$ & $17.167742\mu A$ \\ \hline
+% \cellcolor[HTML]{329A9D}Sim-norm       & $4.6084311 V$ & $7.5278841 mA$ & $172.914\mu A$   & $190.07392\mu A$ & $17.159407\mu A$ \\ \hline
+% \cellcolor[HTML]{329A9D}Implementación & $4.8 V$       & $7,03 mA$      & $166.58\mu A$    & $184.85\mu A$    & $18.27 \mu A$    \\ \hline
+% \end{tabular}%
+% }
+% \end{table}
+
+
 \end{multicols}
-\newpage
-% Please add the following required packages to your document preamble:
-% \usepackage{graphicx}
 \begin{table}[]
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{|l|l|l|l|l|l|}
@@ -230,15 +279,17 @@ Si resolvemos $R_2$:
   \cellcolor[HTML]{9698ED}{\color[HTML]{000000} $V_{CE}$} &
   \cellcolor[HTML]{9698ED}{\color[HTML]{000000} $I_{CQ}$} &
   \cellcolor[HTML]{9698ED}{\color[HTML]{000000} $I_{R_1}$} &
-  \cellcolor[HTML]{9698ED}$I_{R_2}$ &
-  \cellcolor[HTML]{9698ED}$I_{B}$ \\ \hline
-\cellcolor[HTML]{329A9D}Sim-ideal      & $4.6041008 V$ & $7.5310208 mA$ & $181.61203\mu A$ & $198.77977\mu A$ & $17.167742\mu A$ \\ \hline
-\cellcolor[HTML]{329A9D}Sim-norm       & $4.6084311 V$ & $7.5278841 mA$ & $172.914\mu A$   & $190.07392\mu A$ & $17.159407\mu A$ \\ \hline
-\cellcolor[HTML]{329A9D}Implementación & $4.8 V$       & $7,03 mA$      & $166.58\mu A$    & $184.85\mu A$    & $18.27 \mu A$    \\ \hline
+  \cellcolor[HTML]{9698ED}{\color[HTML]{000000} $I_{R_2}$} &
+  \cellcolor[HTML]{9698ED}{\color[HTML]{000000} $I_{B}$} \\ \hline
+\cellcolor[HTML]{329A9D}Calculado      & $4.2493 \, V$   & $7.7903 \, mA$ & -                & -                & -                \\ \hline
+\cellcolor[HTML]{329A9D}Sim-ideal      & $4.6041 \, V$   & $7.5310 \, mA$ & $181.6120 \,\mu A$ & $198.7798 \,\mu A$ & $17.1677 \,\mu A$ \\ \hline
+\cellcolor[HTML]{329A9D}Sim-norm       & $4.6084 \, V$   & $7.5279 \, mA$ & $172.9140 \,\mu A$ & $190.0739 \,\mu A$ & $17.1594 \,\mu A$ \\ \hline
+\cellcolor[HTML]{329A9D}Implementación & $4.8 \, V$      & $7.03 \, mA$   & $166.58 \,\mu A$   & $184.85 \,\mu A$   & $18.27 \,\mu A$   \\ \hline
 \end{tabular}%
 }
 \end{table}
+
 \begin{minipage}[t]{0.85\linewidth}
-			\sangria{}Como podemos concluir los valores de la polarización estan dentro del $10\%$ por lo tanto, podemos continuar con las mediciones de impedancia y ganancia.
+			\sangria{}Según el listado de rangos anterior, los valores que debemos comparar (calculados vs simulación ideal) y (simulación normalizada vs mplementación), están dentro del $\pm 10\%$ requerido.
 \end{minipage}
 
