@@ -27,8 +27,16 @@ ax.plot(rectaCcX, rectaCcY, 'b-', linewidth=2, label='recta CC')
 
 if puntoQ:
     ax.plot(puntoQ[0], puntoQ[1], 'ko', markersize=8)
-    ax.annotate('Q', (puntoQ[0], puntoQ[1]), xytext=(5, 5), 
-                textcoords='offset points', fontsize=24, fontweight='bold')
+    
+    # Líneas de puntos para mostrar las coordenadas
+    ax.axvline(x=puntoQ[0], color='gray', linestyle='--', alpha=0.7)
+    ax.axhline(y=puntoQ[1], color='gray', linestyle='--', alpha=0.7)
+    
+    # Anotación del punto Q con sus coordenadas
+    ax.annotate(f'Q({puntoQ[0]:.2f}, {puntoQ[1]:.2f})', 
+                (puntoQ[0], puntoQ[1]), xytext=(10, 10), 
+                textcoords='offset points', fontsize=20, fontweight='bold',
+                bbox=dict(boxstyle="round,pad=0.3", facecolor="white", alpha=0.8))
 
 ax.set_xlabel('$v_{CE}$ (V)', fontsize=24)
 ax.set_ylabel('$i_C$ (mA)', fontsize=24)
