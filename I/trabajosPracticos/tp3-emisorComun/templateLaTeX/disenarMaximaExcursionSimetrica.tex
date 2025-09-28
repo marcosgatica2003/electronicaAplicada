@@ -1,0 +1,294 @@
+\begin{multicols}{2}
+
+	\section{DISEÑO MÁXIMA EXCURSIÓN SIMÉTRICA}
+
+	\sangria{} Se tiene el siguiente circuito, consiste en un transistor configurado en base común cuya entrada es una pequeña señal y en la salida se obtiene la misma señal con mayor tensión.
+	\sangria{} El circuito se diseñó para obtener la máxima excursión simétrica, dicese el punto donde se obtiene la mayor variación posible de la señal de entrada (o salida) que no provoca recorte ni por saturación ni por corte del transistor, y que se da de manera simétrica respecto al punto de operación (Q).
+
+	\imagen[Gráfico de máxima excursión simétrica]{6cm}{./imagenes/maximaExcusionSimetrica.png}
+
+	\textbf{Componentes dados:}
+    \begin{itemize}[nosep]
+        \item $R_e = 180\Omega$
+        \item $R_L = 1 K\Omega$
+        \item $R_C = 1,2 K\Omega$
+    \end{itemize}
+
+    \textbf{Componentes a calcular:}
+    \begin{itemize}[nosep]
+        \item $R_1 = ?\Omega$
+        \item $R_2 = ?\Omega$
+    \end{itemize}
+
+    \sangria{} Los componentes usados para este amplificador y en este trabajo fueron:
+    \begin{itemize}[nosep]
+        \item $V_{CC} = 15V$
+        \item Transistor BC547B ($\beta = 540$)
+    \end{itemize}
+
+		\subsection{Cálculo de $R_1$ y $R_2$}
+			\sangria{}Para calcular $R_1$ y $R_2$ primero tenemos que hacer los cálculos de nuestro punto Q, primero calculamos la $I_{CQMES}$, para esto dividimos la tensión de entrada del circuito, por la suma de la resistencia para el circuito en corriente continua ($R_{CC}$) y la resistencia entre corriente alterna($R_{CA}$).
+            \vspace{-5pt}
+			% \begin{align*}
+			% 	I_{CQMES}&=\frac{VCC}{RCC+RCA}\\
+			% 	I_{CQMES}&=\frac{VCC}{(R_C + R_e)+(R_C // R_l)}\\
+			% 	I_{CQMES}&=\frac{15 V}{(180 \Omega + 1,2 K\Omega)+( 180 \Omega// 1 K\Omega)}\\
+			% 	I_{CQMES}&=\frac{15 V}{(1380 \Omega)+(542,45 \Omega)}\\
+			% 	I_{CQMES}&=7,7903 mA
+			% \end{align*}
+\ecuacion{I_{CQMES} = \frac{VCC}{RCC+RCA}}
+\ecuacion{I_{CQMES} = \frac{VCC}{(R_C + R_e)+(R_C // R_l)}}
+\ecuacion{I_{CQMES} = \frac{15 V}{(180 \Omega + 1,2 K\Omega)+(180 \Omega // 1 K\Omega)}}
+\ecuacion{I_{CQMES} = \frac{15 V}{(1380 \Omega)+(542,45 \Omega)}}
+\ecuacion{\resaltar{I_{CQMES} = 7,7903 mA}}
+
+\columnbreak{}
+			\sangria{}Luego podemos decir que $I_C \approx I_E$, para hacer LKT en la malla de salida y calcular $V_{CE}$. (Aclaración $I_{CQMES}$ e $I_C$ van a ser iguales a partir de ahora)
+
+			 % \begin{align*}
+			 % 	VCC &- I_C \cdot  R_C - V_{CE} - I_E \cdot R_e = 0\\
+			 % 	V_{CE} &= VCC - I_C \cdot  R_C - I_E \cdot R_e\\
+			 % 	V_{CE} &= 15 V - 7,7903 mA \cdot  1,2 k\Omega - 7,7903 mA \cdot 180 \Omega\\
+			 % 	V_{CE} &= 4,2493 V
+			 % \end{align*}
+\ecuacion{VCC - I_C \cdot R_C - V_{CE} - I_E \cdot R_e = 0}
+\ecuacion{V_{CE} = VCC - I_C \cdot R_C - I_E \cdot R_e}
+\ecuacion{V_{CE} = 15 V - 7,7903 mA \cdot 1,2 k\Omega - 7,7903 mA \cdot 180 \Omega}
+\ecuacion{\resaltar{V_{CE} = 4,2493 V}}
+			\sangria{}Ahora debemos encontrar $V_{BB}$, una regla de diseño importante es que $I_B \cdot \beta = I_C$ y que para la estabilidad $\frac{R_e}{10}=\frac{R_B}{\beta}$, como nosotros no conocemos $R_B$ vamos a tratar de reemplazar por el valor de $R_e$.
+
+			% \begin{align*}
+			% 	V_{BB} &- R_B \cdot I_B - V_{BE} - I_E \cdot R_e = 0\\
+			% 	V_{BB} &- R_B \cdot I_B - V_{BE} - I_C \cdot R_e = 0\\
+                % V_{BB} &= R_B \cdot I_B + V_{BE} + I_C \cdot R_e\\[5pt]
+			% 	&\text{Ahora reemplazamos $R_B$ e $I_B$}\\
+			% 	V_{BB} &= \frac{R_e}{10}\beta \cdot \frac{I_C}{\beta} + V_{BE} + I_C \cdot R_e\\
+			% 	&\text{Los $\beta$ se cancelan}\\
+			% 	V_{BB} &=\frac{R_e}{10} \cdot {I_C} + V_{BE} + I_C \cdot R_e\\
+			% 	V_{BB} &=\frac{180 \Omega}{10} \cdot {7,7903 mA} + 0,7 V + 7,7903 mA \cdot 180 \Omega\\
+			% 	V_{BB} &= 2,24 V
+			% \end{align*}
+\ecuacion{V_{BB} - R_B \cdot I_B - V_{BE} - I_E \cdot R_e = 0}
+\ecuacion{V_{BB} - R_B \cdot I_B - V_{BE} - I_C \cdot R_e = 0}
+\ecuacion{V_{BB} = R_B \cdot I_B + V_{BE} + I_C \cdot R_e}
+Ahora reemplazamos $R_B$ e $I_B$:
+\ecuacion{V_{BB} = \frac{R_e}{10}\beta \cdot \frac{I_C}{\beta} + V_{BE} + I_C \cdot R_e}
+Los $\beta$ se cancelan:
+\ecuacion{V_{BB} = \frac{R_e}{10} \cdot {I_C} + V_{BE} + I_C \cdot R_e}
+\ecuacion{V_{BB} = \frac{180 \Omega}{10} \cdot {7,7903 mA} + 0,7 V + 7,7903 mA \cdot 180 \Omega}
+\ecuacion{\resaltar{V_{BB} = 2,24 V}}
+
+			\sangria{}Ahora ya podemos calcular $R_1 y R_2$ con el siguiente sistemas de ecuaciones:
+
+			% \begin{align*}
+			% 	R_B &= \frac{R_1 \cdot R_2}{R_1 + R_2} &\longrightarrow&  &\frac{R_B}{R_2} &= \frac{R_1}{R_1 + R_2}\\
+			% 	V_{BB} &= \frac{VCC}{R_1 + R_2} \cdot R_1  &\longrightarrow& &\frac{V_{BB}}{VCC} &= \frac {R_1}{R_1 + R_2}\\
+			% 	&\text{Si resolvemos $R_2$}\\
+			% 	\frac{R_B}{R_2} &= \frac{V_{BB}}{VCC}\\
+			% 	R_2 &= \frac{VCC}{V_{BB}} \cdot R_B\\
+			% 	R_2 &= \frac{VCC}{V_{BB}} \cdot \frac{R_e \cdot \beta}{10}\\
+			% 	R_2 &= \frac{15 V}{2,24 V} \cdot \frac{180 \cdot \beta}{10}\\
+			% 	R_2 &= 120,4054055 \Omega \cdot \beta
+			% \end{align*}
+\ecuacion{R_B = \frac{R_1 \cdot R_2}{R_1 + R_2}}
+\ecuacion{\frac{R_B}{R_2} = \frac{R_1}{R_1 + R_2}}
+\ecuacion{V_{BB} = \frac{VCC}{R_1 + R_2} \cdot R_1}
+\ecuacion{\frac{V_{BB}}{VCC} = \frac {R_1}{R_1 + R_2}}
+Si resolvemos $R_2$:
+\ecuacion{\frac{R_B}{R_2} = \frac{V_{BB}}{VCC}}
+\ecuacion{R_2 = \frac{VCC}{V_{BB}} \cdot R_B}
+\ecuacion{R_2 = \frac{VCC}{V_{BB}} \cdot \frac{R_e \cdot \beta}{10}}
+\ecuacion{R_2 = \frac{15 V}{2,24 V} \cdot \frac{180 \cdot \beta}{10}}
+\ecuacion{\resaltar{R_2 = 120,4054055 \Omega \cdot \beta}}
+
+
+
+			\sangria{} Con el mismo modo si resolvemos $R_1$ queda que $R_1=21,163893\Omega \cdot \beta$, entonces $R_1 y R_2$ quedan:
+            \begin{itemize}[nosep]
+				\item $R_2 = 120,4054055\Omega \cdot \beta$
+				\item $R_1 = 21,163893\Omega \cdot \beta$
+            \end{itemize}
+
+
+            \sangria{}Por último podemos calcular el valor de $R_B$ ajustado a nuestro $\beta$para asegurarnos que los cálculos esten correctos, además de que nos servira mas adelante para el cálculo analítico de la $A_i$:
+
+\ecuacion{R_B = \frac{R_1 \cdot R_2}{R_1+R_2}}
+\ecuacion{R_B = \frac{11,4285022 k\Omega \cdot 65,0189189 k\Omega}{11,4285022 k\Omega+ 65,0189189 k\Omega}}
+\ecuacion{\resaltar{R_B = 9.720039 k\Omega}}
+
+
+            \textbf{Valores ajustados al $\beta$}
+            \begin{itemize}[nosep]
+				\item $R_1 = 11,4285022 k\Omega$
+				\item $R_2 = 65,0189189 k\Omega$
+			\end{itemize}
+
+
+            \textbf{Valores normalizados}
+            \begin{itemize}[nosep]
+				\item $R_1 = 12 k\Omega$
+				\item $R_2 = 68 k\Omega$
+			\end{itemize}
+
+			\textbf{Valores Importantes Obtenidos}
+            \begin{itemize}[nosep]
+            	\item $I_{CQMES} 7.7903mA $
+            	\item $V_{CE} = 4.2493V$
+				\item $R_1 = 12 k\Omega$
+				\item $R_2 = 68 k\Omega$
+			\end{itemize}
+
+			\sangria{}Los valores que remarcamos como importantes son los que serán comparados con la simulaciónes del siguiente punto.
+			\sangria{}Los valores normalizados los elejimos en base a los más cercanos a los ideales, la siguiente consigna nos pone un límite, en el cual los resultados de las simulaciones no deben estar fuera de un rango de $\pm 10\%$.
+
+		\subsection{Simulación e Implementación}
+        \sangria{}Se hicieron 2 simulaciones del circuito, la primera se realizó, con los valores ideales de las resistencias obtenidas a partir de las reglas de diseño ,y la segunda, con los valores normalizados más cercanos de las mismas. Los circuitos se simularon en el sowftware Ltspice, lo que pretendemos con las simulaciones es que los valores calculados no difieran del $\pm \%10$ con respecto a las simulaciones.
+
+			\subsubsection{Simulación ideal}
+				\imagen[Simulación ideal]{7cm}{./imagenes/simulacion_ideal.png}
+
+				\textbf{Valores Obtenidos}
+                \begin{itemize}[nosep]
+					\item $V_{CE} = 4.6041008 V$
+					\item $I_{CQ}= 7.5310208 mA$
+					\item $I_B = 17.167742\mu A$
+					\item $I_{R_1} = 181.61203\mu A$
+					\item $I_{R_2} = 198.77977\mu A$
+				\end{itemize}
+			\subsubsection{Simulación normalizada}
+            \imagen[Simulación normalizada]{6cm}{./imagenes/simulacion_norm.png}
+
+				\textbf{Valores Obtenidos}
+                \begin{itemize}[nosep]
+					\item $V_{CE} = 4.6084311 V$
+					\item $I_{CQ}= 7.5278841 mA$
+					\item $I_B = 17.159407\mu A$
+					\item $I_{R_1} = 172.914\mu A$
+					\item $I_{R_2} = 190.07392\mu A$
+				\end{itemize}
+
+		\subsection{Implementación}
+			\sangria{}Cuando implementamos el circuito no medimos directamente los valores, sino que medimos las tensiones claves con respecto a masa para tener una medición más acertada de los valores.
+
+			\textbf{Valores Obtenidos}
+            \begin{itemize}[nosep]
+				\item $V_{CC} = 14.56V$
+                \item $V_{C} = 6,12V$
+                \item $V_{E}= 1.32V$
+                \item $V_{B} = 1.99V$\\[5pt]
+            \end{itemize}
+
+			\textbf{Cálculos de la Implementación}
+            %%%% FUCK ALIGN, ALL MY HOMIES USE \ecuacion OR $$ OR \[ \]
+            % \begin{align*}
+			% 	V_{CE} &= V_{C}-V{E}\\
+			% 	V_{CE} &= 6.12V - 1.32V\\
+			% 	V_{CE} &= 4.8V
+			% \end{align*}
+
+\ecuacion{V_{CE} = V_{C}-V_{E}}
+\ecuacion{V_{CE} = 6,12V - 1,32V}
+\ecuacion{\resaltar{V_{CE} = 4,8V}}
+
+			% \begin{align*}
+			% 	I_{CQ}&=\frac{V_{CC}-V_{C}}{R_{C}}\\
+			% 	I_{CQ}&=\frac{14.56 V - 6.12 V}{1.2 k\Omega}\\
+			% 	I_{CQ}&=7,03 mA
+			% \end{align*}
+
+\ecuacion{I_{CQ} = \frac{V_{CC}-V_{C}}{R_{C}}}
+\ecuacion{I_{CQ} = \frac{14.56 V - 6.12 V}{1.2 k\Omega}}
+\ecuacion{\resaltar{I_{CQ} = 7,03 mA}}
+
+			% \begin{align*}
+			% 	I_{R_1}&=\frac{V_B}{R_1}\\
+			% 	I_{R_1}&=\frac{1.99V}{12k\Omega}\\
+			% 	I_{R_1}&=166.58\mu A
+            % \end{align*}
+
+			% \begin{align*}
+			% 	I_{R_2}&=\frac{V_{CC} - V_B}{R_2}\\
+			% 	I_{R_2}&=\frac{14.56V - 1.99V}{68k\Omega}\\
+			% 	I_{R_2}&=184.85\mu A
+			% \end{align*}
+
+			% \begin{align*}
+			% 	I_{B}&=I_{R_2}-I_{R_1}\\
+			% 	I_{B}&=184.85\mu A-166.58\mu A\\
+			% 	I_{B}&=18.27 \mu A
+			% \end{align*}
+\ecuacion{I_{R_1} = \frac{V_B}{R_1}}
+\ecuacion{I_{R_1} = \frac{1.99V}{12k\Omega}}
+\ecuacion{\resaltar{I_{R_1} = 166.58\mu A}}
+
+\ecuacion{I_{R_2} = \frac{V_{CC} - V_B}{R_2}}
+\ecuacion{I_{R_2} = \frac{14.56V - 1.99V}{68k\Omega}}
+\ecuacion{\resaltar{I_{R_2} = 184.85\mu A}}
+
+\ecuacion{I_{B} = I_{R_2}-I_{R_1}}
+\ecuacion{I_{B} = 184.85\mu A-166.58\mu A}
+\ecuacion{\resaltar{I_{B} = 18.27 \mu A}}
+
+
+				\subsubsection{Cálculos de tolerancia}
+				\sangria{}Para saber el rango de valores aceptables debemos realizar la siguiente operación ($X \pm [X \cdot 0.1] $), siendo x el valor que queremos comparar.
+				Como explicamos antes, los resultados ideales calculados se comparan contra los de la simulación ideal, mientras que los valores obtenidos en la simulación normalizada se comparan contra los valores medidos.
+
+				\textbf{Rango de Comparación:}valores ideales
+				\begin{itemize}
+					\item $I_{CQ}=[7.01127 - 8.56933]mA$
+					\item $V_{CE}=[3.82437 - 4.67423]V$
+				\end{itemize}
+
+				\textbf{Rango de Comparación:}valores simulados obtenidos de la simulación normalizada
+				\begin{itemize}
+					\item $I_{CQ}=[6.775 - 8.2806]mA$
+					\item $V_{CE}=[4.1475 - 5.06]V$
+					\item $I_{R_1}=[155.6226 - 190.2054]\mu A$
+					\item $I_{R_2}=[171.0665 - 209.081]\mu A$
+					\item $I_{B}=[15.4434 - 18.8753]\mu A$
+				\end{itemize}
+				\sangria{} Los valores $I_{R_1}, I_{R_2}$ e $ I_{B}$ se agregaron para tener más confiabilidad en las mediciones, pero nuestro foco de antención siempre es el punto Q, dados por $I_{CQ} y V_{CQ}$.
+
+% \end{multicols}
+% \begin{table}[]
+% \resizebox{\columnwidth}{!}{%
+% \begin{tabular}{|l|l|l|l|l|l|}
+% \hline
+%  &
+%   \cellcolor[HTML]{9698ED}{\color[HTML]{000000} $V_{CE}$} &
+%   \cellcolor[HTML]{9698ED}{\color[HTML]{000000} $I_{CQ}$} &
+%   \cellcolor[HTML]{9698ED}{\color[HTML]{000000} $I_{R_1}$} &
+%   \cellcolor[HTML]{9698ED}$I_{R_2}$ &
+%   \cellcolor[HTML]{9698ED}$I_{B}$ \\ \hline
+% \cellcolor[HTML]{329A9D}Sim-ideal      & $4.6041008 V$ & $7.5310208 mA$ & $181.61203\mu A$ & $198.77977\mu A$ & $17.167742\mu A$ \\ \hline
+% \cellcolor[HTML]{329A9D}Sim-norm       & $4.6084311 V$ & $7.5278841 mA$ & $172.914\mu A$   & $190.07392\mu A$ & $17.159407\mu A$ \\ \hline
+% \cellcolor[HTML]{329A9D}Implementación & $4.8 V$       & $7,03 mA$      & $166.58\mu A$    & $184.85\mu A$    & $18.27 \mu A$    \\ \hline
+% \end{tabular}%
+% }
+% \end{table}
+
+
+\end{multicols}
+\begin{center}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+ &
+  \cellcolor[HTML]{9698ED}{\color[HTML]{000000} $V_{CE}$} &
+  \cellcolor[HTML]{9698ED}{\color[HTML]{000000} $I_{CQ}$} &
+  \cellcolor[HTML]{9698ED}{\color[HTML]{000000} $I_{R_1}$} &
+  \cellcolor[HTML]{9698ED}{\color[HTML]{000000} $I_{R_2}$} &
+  \cellcolor[HTML]{9698ED}{\color[HTML]{000000} $I_{B}$} \\ \hline
+\cellcolor[HTML]{329A9D}Calculado      & $4.2493 \, V$   & $7.7903 \, mA$ & -                & -                & -                \\ \hline
+\cellcolor[HTML]{329A9D}Sim-ideal      & $4.6041 \, V$   & $7.5310 \, mA$ & $181.6120 \,\mu A$ & $198.7798 \,\mu A$ & $17.1677 \,\mu A$ \\ \hline
+\cellcolor[HTML]{329A9D}Sim-norm       & $4.6084 \, V$   & $7.5279 \, mA$ & $172.9140 \,\mu A$ & $190.0739 \,\mu A$ & $17.1594 \,\mu A$ \\ \hline
+\cellcolor[HTML]{329A9D}Implementación & $4.8 \, V$      & $7.03 \, mA$   & $166.58 \,\mu A$   & $184.85 \,\mu A$   & $18.27 \,\mu A$   \\ \hline
+\end{tabular}%
+}
+\end{center}
+
+\begin{minipage}[t]{0.85\linewidth}
+			\sangria{}Según el listado de rangos anterior, los valores que debemos comparar (calculados vs simulación ideal) y (simulación normalizada vs mplementación), están dentro del $\pm 10\%$ requerido.
+\end{minipage}
+

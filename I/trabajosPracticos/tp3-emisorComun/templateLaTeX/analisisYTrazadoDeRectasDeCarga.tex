@@ -1,0 +1,35 @@
+\begin{multicols}{2}
+\section{ANÁLISIS Y TRAZADO DE RECTAS DE CARGA}
+        \sangria{} En este punto se han trazado rectas de carga de corriente continua y corriente alterna tomando como valores de resistencias los normalizados para reemplazar en las ecuaciones. El objetivo es visualizar gráficamente la excursión simétrica real sin distorsión.
+
+        \subsection{Cálculo rectas de carga}
+        \subsubsection{CC}
+        \[
+        v_{CE} = V_{CC} - I_C (R_C + R_E)
+        \]
+        Siendo:
+            \ecuacion{I_C = -\frac{1}{R_C + R_E} \cdot V_{CE} + \frac{V_{CC}}{R_C + R_E}}
+        Esta función tiene la forma de
+        	\ecuacion{y=mx+b}
+        	Siendo $I_C=y$, $\frac{-1}{R_C+R_E}=m$, $V_{CE}=x$ , $\frac{V_{CC}}{R_C + R_E}=b$
+
+            \ecuacion{\resaltar{i_C = 0 \Rightarrow v_{CE MAX} |  V_{CE}=0 \Rightarrow V_{CC} = 15v}}
+            \ecuacion{\rightarrow i_{CMAX} = \frac{15v}{1,2k\Omega + 180 \Omega}}
+            \ecuacion{\resaltar{i_{CMAX} = 10,86mA}}
+
+        \subsubsection{CA}
+        \ecuacion{v_{CE} = V_{CC}^\prime - i_C (\frac{R_CR_L}{R_C + R_L})}
+        \ecuacion{i_C = -(\frac{R_C + R_L}{R_C \cdot R_L})v_{CE} + V_{CC}^\prime \cdot (\frac{R_C + R_L}{R_C \cdot R_L})}
+        \ecuacion{i_C = -(\frac{R_C + R_L}{R_C \cdot R_L})v_{CE} + (V_{CEQMES} + I_{CQ}(\frac{R_CR_L}{R_C + R_L}) \cdot (\frac{R_C + R_L}{R_CR_L}))}
+        Esta función tiene la forma de
+        	\ecuacion{y=mx+b}
+        	Siendo $i_C=y$, $\frac{R_C + R_L}{R_C \cdot R_L}=m$, $v_{CE}=x$; $V_{CEQMES} + I_{CQ}(\frac{R_CR_L}{R_C + R_L}) \cdot (\frac{R_C + R_L}{R_CR_L})=b$
+        \ecuacion{v_{CE} = 0 \Rightarrow i_{CMAX} = V_{CC}^\prime\frac{R_C + R_L}{R_CR_L}}
+        \ecuacion{i_C = 0 \Rightarrow v_{CEMAX} = V_{CC}^\prime}
+        \ecuacion{\rightarrow V_{CC}^\prime = 4,2493V + 7,7903 mA (\frac{1,2k\Omega\cdot1000\Omega}{1000\Omega+1,2k\Omega})}
+        \ecuacion{\resaltar{V_{CC}^\prime = 8,4985v}}
+\end{multicols}
+
+\subsection{Recta de carga}
+\imagen[Rectas de carga]{8cm}{./imagenes/rectaDeCarga.png}
+

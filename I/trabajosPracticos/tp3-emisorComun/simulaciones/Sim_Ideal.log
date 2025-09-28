@@ -1,0 +1,15 @@
+LTspice 24.1.6 for Windows
+Circuit: C:\users\valentino\Documents\Facultad\3ro\gatica\electronicaAplicada\I\trabajosPracticos\tp3\simulaciones\Sim_Ideal.net
+Start Time: Thu Aug 14 17:43:21 2025
+solver = Normal
+Maximum thread count: 2
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration for .op point succeeded.
+Total elapsed time: 0.138 seconds.
+
+Files loaded:
+C:\users\valentino\Documents\Facultad\3ro\gatica\electronicaAplicada\I\trabajosPracticos\tp3\simulaciones\Sim_Ideal.net
+C:\users\valentino\AppData\Local\LTspice\lib\cmp\standard.bjt
+

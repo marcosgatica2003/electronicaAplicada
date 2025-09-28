@@ -1,0 +1,16 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}DISEÑO MÁXIMA EXCURSIÓN SIMÉTRICA}{1}{}%
+\contentsline {subsection}{\numberline {1.1}Cálculo de $R_1$ y $R_2$}{1}{}%
+\contentsline {subsection}{\numberline {1.2}Simulación e Implementación}{2}{}%
+\contentsline {subsubsection}{\numberline {1.2.1}Simulación ideal}{2}{}%
+\contentsline {subsubsection}{\numberline {1.2.2}Simulación normalizada}{2}{}%
+\contentsline {subsection}{\numberline {1.3}Implementación}{2}{}%
+\contentsline {subsubsection}{\numberline {1.3.1}Cálculos de tolerancia}{3}{}%
+\contentsline {section}{\numberline {2}ANÁLISIS Y TRAZADO DE RECTAS DE CARGA}{3}{}%
+\contentsline {subsection}{\numberline {2.1}Cálculo rectas de carga}{3}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}CC}{3}{}%
+\contentsline {subsubsection}{\numberline {2.1.2}CA}{3}{}%
+\contentsline {subsection}{\numberline {2.2}Recta de carga}{4}{}%
+\contentsline {section}{\numberline {3}MEDICIONES EN PEQUEÑA SEÑAL DE $Z_i$, $Z_o$, $A_i$ y $A_v$}{5}{}%
+\contentsline {subsection}{\numberline {3.1}Análisis}{5}{}%
+\contentsline {subsection}{\numberline {3.2}Experimental}{5}{}%
