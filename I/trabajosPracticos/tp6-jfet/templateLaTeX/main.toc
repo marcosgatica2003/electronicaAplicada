@@ -1,0 +1,23 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}RÚBRICA}{1}{}%
+\contentsline {section}{\numberline {2}INTRODUCCIÓN}{2}{}%
+\contentsline {subsection}{\numberline {2.1}Condiciones de trabajo y ensayo}{2}{}%
+\contentsline {section}{\numberline {3}ACTIVIDAD PRÁCTICA SOBRE SCR}{2}{}%
+\contentsline {subsection}{\numberline {3.1}Condición de disparo $I_G$ y corriente de mantenimiento $I_H$}{2}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}Actividad de laboratorio}{2}{}%
+\contentsline {subsubsection}{\numberline {3.1.2}Actividad de simulación}{6}{}%
+\contentsline {subsection}{\numberline {3.2}Obtención de curvas característica del SCR}{8}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Actividad de laboratorio}{9}{}%
+\contentsline {subsection}{\numberline {3.3}Funcionamiento del SCR con corrientes alternas}{10}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}Actividad de simulación}{10}{}%
+\contentsline {section}{\numberline {4}TIRISTORES DIAC}{13}{}%
+\contentsline {section}{\numberline {5}TIRISTORES TRIAC}{15}{}%
+\contentsline {subsection}{\numberline {5.1}Conclusiones}{16}{}%
+\contentsline {section}{\numberline {6}Dimmer y controlador de potencia}{16}{}%
+\contentsline {section}{\numberline {7}INTERPRETACIÓN DE LAS ESPECIFICACIONES DEL FABRICANTE}{19}{}%
+\contentsline {section}{\numberline {8}A.L. 4: Interpretación de las especificaciones del fabricante}{19}{}%
+\contentsline {section}{\numberline {9}Conclusiones}{20}{}%
+\contentsline {section}{\numberline {10}Bibliografía, datasheets e instrumentos}{20}{}%
+\contentsline {subsection}{\numberline {10.1}Bibliografía}{20}{}%
+\contentsline {subsection}{\numberline {10.2}Instrumentos}{21}{}%
+\contentsline {subsection}{\numberline {10.3}Datasheets}{24}{}%
