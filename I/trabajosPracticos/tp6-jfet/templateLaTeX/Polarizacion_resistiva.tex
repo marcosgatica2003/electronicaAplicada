@@ -126,24 +126,18 @@ $R_D$     & \multicolumn{1}{c|}{$1681.51\ \Omega$} & $1.8\ \text{k}\Omega$ \\ \h
 \newpage
 \midTitle{red}{Parte práctica}{}
 \sangria{Cuando implementamos el circuito y medimos, tuvimos que hacer un cambio en $R_S$, ya que la polarización no daba de la manera correcta, fuimos bajando el valor hasta llegar a $80\Omega$, con ese valor la polarizacón nos dió los isguientes valores:}
-\sangria{Para medir $I_{DQ}$ divimos la tensión medida en la resitencia $R_D$, dividido el valor de esta ($1,8k$), el resatuda fue de $I_{DQ}=3,144mA$ y la $V_{DS}$}
+\sangria{Para medir $I_{DQ}$ divimos la tensión medida en la resitencia $R_D$, dividido el valor de esta ($1,8k$), el resatuda fue de $I_{DQ}=3,144mA$ y la $V_{DS}=6,12V$}
 
 
 
-\begin{table}[]
-\caption{Valores del punto Q}
-\label{table3}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|
->{\columncolor[HTML]{FFCCC9}}c |cc|}
+\begin{table}[H]
+\caption{Valores del punto Q, medido vs calculado}
+\label{table2}
+\begin{tabular}{|c|c|c|}
 \hline
-\cellcolor[HTML]{FFFC9E}\textbf{Parámetro} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{FFFC9E}\textbf{Valor Calculado (No normalizado)}} &
-  \cellcolor[HTML]{FFFC9E}\textbf{Valor Normalizado (Comercial)} \\ \hline
-$V_{GSQ}$ & \multicolumn{2}{c|}{$-0.4106\text{ V}$}                        \\ \hline
-$I_{DQ}$  & \multicolumn{2}{c|}{$3.325\text{ mA}$}                         \\ \hline
-$V_{DSQ}$ & \multicolumn{2}{c|}{$6\text{ V}$}                              \\ \hline
-$R_S$     & \multicolumn{1}{c|}{$123.48\ \Omega$}  & $120\ \Omega$         \\ \hline
-$R_D$     & \multicolumn{1}{c|}{$1681.51\ \Omega$} & $1.8\ \text{k}\Omega$ \\ \hline
-\end{tabular}%
-}
+\rowcolor[HTML]{FFFC9E}
+\textbf{Parámetro}                & \textbf{Valor Calculado} & \textbf{Valor Medido} \\ \hline
+\cellcolor[HTML]{FFCCC9}$V_{DSQ}$ & $6 V$                      & $6,12 V$              \\ \hline
+\cellcolor[HTML]{FFCCC9}$I_{DQ}$  & $3.325mA$                & $3,144mA$
+\end{tabular}
+\end{table}
