@@ -1,11 +1,11 @@
 # Fdb version 4
-["pdflatex"] 1762358504.58587 "./main.tex" "main.pdf" "main" 1762358509.3807 0
+["pdflatex"] 1762382989.22431 "./main.tex" "main.pdf" "main" 1762382993.85424 0
   "./main.tex" 1762351972 665 864b0b4486dadd7142a756dd09551e92 ""
   "Fuente_Corriente_pequeña_señal.tex" 1762349070 805 6a10ec88584f82664ffd9646d8cf3003 ""
   "Fuente_corriente.tex" 1762315113 0 d41d8cd98f00b204e9800998ecf8427e ""
   "Pequeña_señal_entrada.tex" 1762315185 0 d41d8cd98f00b204e9800998ecf8427e ""
   "Pequeña_señal_salida.tex" 1762315226 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "Polarizacion_resistiva.tex" 1762358462 3995 108d4875a416a217ea35c554eb55fd09 ""
+  "Polarizacion_resistiva.tex" 1762382985 5253 a4100c9c56745aba45a6995b7d107d30 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1762128822 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1762129853 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1762136090 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -276,9 +276,9 @@
   "imagenes/logoDepartamentoElectronica.png" 1762349070 1317590 ef9ac53a82a0e6033e5c6a7818586a7d ""
   "imagenes/utn.png" 1762349071 3022 6e8e474f8ac767cf574b12e1fb74f79e ""
   "indiceConfig.tex" 1759871419 487 3a6b312c1f9c50e987643ff6bd68b98b ""
-  "main.aux" 1762358508 1498 5ce3a24c11f773b971d664ca456a583d "pdflatex"
+  "main.aux" 1762382993 1679 58dc23fa0f166df91b3b88b43ddb321d "pdflatex"
   "main.tex" 1762351972 665 864b0b4486dadd7142a756dd09551e92 ""
-  "main.toc" 1762358508 285 11f879d0ca991d4d40090193e89e393c "pdflatex"
+  "main.toc" 1762382993 285 11f879d0ca991d4d40090193e89e393c "pdflatex"
   "packages.tex" 1762196009 1091 4957a5948de3fa68b6df266827eabfdb ""
   "pythontex-files-main/main.pytxmcr" 0 -1 0 ""
   (generated)

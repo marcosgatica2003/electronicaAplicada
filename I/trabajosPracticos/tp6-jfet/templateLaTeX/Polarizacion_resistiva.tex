@@ -1,8 +1,11 @@
 \newpage
 \section{Polarización del punto Q}
+\midTitle{red}{Parte analítica}{}
 \sangria{En este trabajo implementamos un transistor JFET en configuración fuente común, para aplicar el modelo MES, en esta oportunidad implementamos el modelo con autopolarización. Nuestros datos iniciales fueron $V_{DD}= 12V$ $R_G=1M\Omega$, además contabamos también con los datos del punto Q ya predefinidos $I_{DQ}=\frac{I_{DSS}}{2}$ y $V_{DSQ}=\frac{V_{DD}}{2}$}
 \sangria{Primero revelamos la curva de $I_{DSS}$, para luego calcular $R_S$ $R_D$, la curva relevada fue la siguiente.}
+
 \midTitle{blue}{Mediciones de $I_{DSS}$ Obtenidas}{}
+
 \begin{center}
 \setlength{\tabcolsep}{4pt}
 \captionof{table}{Mediciones de $I_{DSS}$ en función de $V_{DS}$.}
@@ -33,20 +36,19 @@ c | c |}
     \centering
     \begin{tikzpicture}
     \begin{axis}[
-        title={Curva característica de JFET ($V_{GS} = 0$)}, % Título del gráfico
+        title={Curva característica de JFET (K117) ($V_{GS} = 0$)}, % Título del gráfico
         xlabel={$V_{DS}$ (V)},          % Etiqueta eje X
         ylabel={$I_{DSS}$ (mA)},        % Etiqueta eje Y
         grid=major,                   % Grilla principal
         legend pos=south east,        % Posición de la leyenda (esquina inf. derecha)
-        width=0.8\textwidth,          % Ancho del gráfico
+        width=0.7\textwidth,          % Ancho del gráfico
     ]
 
     \addplot [
-        smooth,     % Suaviza la línea que une los puntos
-        mark=*,     % Pone un marcador en cada punto de la tabla
-        blue,       % Color de la línea
+        smooth,
+        mark=*,
+        blue,
     ]
-    % Aquí van los datos Vds (x) e Idss (y) de tu tabla
     coordinates {
         (0.200, 2.112)
         (0.440, 4.530)
@@ -77,6 +79,8 @@ c | c |}
 $$I_{DQ}=\frac{I_{DSS}}{2}$$
 $$I_{DQ}=\frac{6,650mA}{2}$$
 $$I_{Q}=3,325mA$$
+$$V_{DSQ}=\frac{V_{DD}}{2}$$
+$$V_{DSQ}=6V$$
 
 \sangria{El siguiente paso fue calcular las resistencias para situar el punto Q, para esto primero obtenemos el valor de $V_{GS}$ para luego obtener $R_S$ y finalmente obtenemos $R_D$. Las ecuaciones de las cuales obtenemos estos valores son las siguiente:}
 
@@ -87,12 +91,59 @@ $$V_{DD}=i_{D}*(R_{S} + R_{D})+V_{DS}$$
 \sangria{De la primera ecuación despejamos $V_{GS}$, como nos encontramos en el punto Q, podemos sustituir $i_D$ por $I_{DQ}$ y queda:}
 $$V_{GS}=(\sqrt{\frac{i_D}{I_{DSS}}}-1)*-V_{GSoff}$$
 $$V_{GS}=(\sqrt{\frac{I_{DQ}}{I_{DSS}}}-1)*-V_{GSoff}$$
+\sangria{En la siguiente tabla se muestran los datos obtenidos para el punto Q}
 $$V_{GS}=(\sqrt{\frac{I_{DSS}}{2*I_{DSS}}}-1)*-V_{GSoff}$$
 $$V_{GS}=(\sqrt{\frac{1}{2}}-1)*-V_{GSoff}$$
 $$V_{GS}=-0,4106V$$
 
 \sangria{Con este dato podemos obtener $R_S$ a partir de la segunda ecuación:}
 $$R_S={\large{|}\frac{-V_{GS}}{I_{DQ}}}\large{|}$$
-$$R_S=123,48\Omega$$
-\sangria{Ya con este valor podemos calcular $R_D$}
-$$$$
+$$R_S=123,48\Omega \rightarrow R_S=120\Omega$$
+\sangria{Ya con este valor podemos calcular $R_D$ apartir de la 3ra ecuación}
+
+$$V_{DD}=i_{D}*(R_{S} + R_{D})+V_{DS}$$
+$$R_D=-R_S +\frac{V_{DD}-V_{DS}}{I_{DQ}}$$
+$$R_D=1681,51\Omega \rightarrow R_D=1,8K\Omega$$
+
+\begin{table}[]
+\caption{Valores del punto Q}
+\label{table2}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|
+>{\columncolor[HTML]{FFCCC9}}c |cc|}
+\hline
+\cellcolor[HTML]{FFFC9E}\textbf{Parámetro} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{FFFC9E}\textbf{Valor Calculado (No normalizado)}} &
+  \cellcolor[HTML]{FFFC9E}\textbf{Valor Normalizado (Comercial)} \\ \hline
+$V_{GSQ}$ & \multicolumn{2}{c|}{$-0.4106\text{ V}$}                        \\ \hline
+$I_{DQ}$  & \multicolumn{2}{c|}{$3.325\text{ mA}$}                         \\ \hline
+$V_{DSQ}$ & \multicolumn{2}{c|}{$6\text{ V}$}                              \\ \hline
+$R_S$     & \multicolumn{1}{c|}{$123.48\ \Omega$}  & $120\ \Omega$         \\ \hline
+$R_D$     & \multicolumn{1}{c|}{$1681.51\ \Omega$} & $1.8\ \text{k}\Omega$ \\ \hline
+\end{tabular}%
+}
+\end{table}
+\newpage
+\midTitle{red}{Parte práctica}{}
+\sangria{Cuando implementamos el circuito y medimos, tuvimos que hacer un cambio en $R_S$, ya que la polarización no daba de la manera correcta, fuimos bajando el valor hasta llegar a $80\Omega$, con ese valor la polarizacón nos dió los isguientes valores:}
+\sangria{Para medir $I_{DQ}$ divimos la tensión medida en la resitencia $R_D$, dividido el valor de esta ($1,8k$), el resatuda fue de $I_{DQ}=3,144mA$ y la $V_{DS}$}
+
+
+
+\begin{table}[]
+\caption{Valores del punto Q}
+\label{table3}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|
+>{\columncolor[HTML]{FFCCC9}}c |cc|}
+\hline
+\cellcolor[HTML]{FFFC9E}\textbf{Parámetro} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{FFFC9E}\textbf{Valor Calculado (No normalizado)}} &
+  \cellcolor[HTML]{FFFC9E}\textbf{Valor Normalizado (Comercial)} \\ \hline
+$V_{GSQ}$ & \multicolumn{2}{c|}{$-0.4106\text{ V}$}                        \\ \hline
+$I_{DQ}$  & \multicolumn{2}{c|}{$3.325\text{ mA}$}                         \\ \hline
+$V_{DSQ}$ & \multicolumn{2}{c|}{$6\text{ V}$}                              \\ \hline
+$R_S$     & \multicolumn{1}{c|}{$123.48\ \Omega$}  & $120\ \Omega$         \\ \hline
+$R_D$     & \multicolumn{1}{c|}{$1681.51\ \Omega$} & $1.8\ \text{k}\Omega$ \\ \hline
+\end{tabular}%
+}
