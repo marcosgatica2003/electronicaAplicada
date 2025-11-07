@@ -1,0 +1,106 @@
+% \newpage
+\section{Polarización Con fuente de corriente}
+\subsection{Cálculo de $R_1$}
+\midTitle{red}{Parte analítica}{}
+\sangria{En la segunda parte del trabajo práctico, se reemplaza la resistencia de drenador $R_D$ por una \textbf{carga activa}. Como se vio en la teoría, en los circuitos integrados se utilizan fuentes de corriente de transistores como elemento de carga, ya que son menos sensibles a las variaciones de temperatura y ocupan una menor superficie que los resistores pasivos.}
+
+\sangria{El circuito a implementar es una \textbf{Fuente de Corriente Básica} con BJT, también conocida como espejo de corriente. Esta configuración utiliza dos transistores (Q1 y Q2) apareados, donde Q1 se conecta como un diodo para establecer una corriente de referencia $I_R$.}
+
+
+
+\begin{figure}[!ht]
+\centering
+\resizebox{0.3\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\tiny]
+\draw (5.5,11.25) to[Tpnp, transistors/scale=1.19] (5.5,13.25);
+\draw (3.5,11.25) to[Tpnp, transistors/scale=1.19] (3.5,13.25);
+\draw (3,11.25) to[short] (4.25,11.25);
+\draw (4.25,11.25) to[short] (4.25,12.25);
+\draw (3,11.25) to[short] (2.25,11.25);
+\draw (2.25,11.25) to[R] (1.25,11.25);
+\draw (0.75,11) to (0.75,10.75) node[sground]{};
+\draw (1.25,11.25) to[short] (0.75,11.25);
+\draw (0.75,11.25) to[short] (0.75,10.75);
+\draw (7.25,13.25) to[short] (7.25,11.5);
+\draw (7.25,11.5) to[american voltage source] (7.25,8.25);
+\draw (2.5,10.25) to[sinusoidal voltage source, sources/symbol/rotate=auto] (2.5,7.75);
+\draw (4.25,10.25) to[curved capacitor] (2.5,10.25);
+\draw (4.25,10.25) to[R] (4.25,7.75);
+\draw (2.5,7.75) to[short] (7.25,7.75);
+\draw (7.25,8.25) to[short] (7.25,7.75);
+\draw [->, >=Stealth] (4.25,10.25) -- (5,10.25);
+\draw [short] (5,10.5) -- (5,10);
+\draw [short] (5,10.75) -- (5,10.5);
+\draw [short] (5,9.75) -- (5,10);
+\draw [short] (5,10.75) -- (5.25,10.75);
+\draw [short] (5,9.75) -- (5.25,9.75);
+\draw [short] (5.5,11.25) -- (5.5,10.75);
+\draw [short] (5.5,10.75) -- (5.25,10.75);
+\draw (5.25,9.75) to[R] (5.25,7.75);
+\draw (6,9.5) to[curved capacitor] (6,7.75);
+\draw (5.25,9.75) to[short] (5.75,9.75);
+\draw (5.5,11.25) to[short] (6.75,11.25);
+\node [font=\normalsize] at (6.75,11.5) {+};
+\node [font=\normalsize] at (6.5,10) {$V_{L}$};
+\node [font=\normalsize] at (5.5,12.25) {Q2};
+\node [font=\normalsize] at (3.5,12.25) {Q1};
+\node [font=\normalsize] at (3.5,9.25) {$R_{G}$};
+\node [font=\normalsize] at (4.75,8.75) {$R_{S}$};
+\node [font=\normalsize] at (1.5,11.75) {$R_{1}$};
+\draw [short] (2.5,12.25) -- (2.5,12.75);
+\draw [short] (4.5,12.75) -- (4.5,12.25);
+\draw [short] (3.5,13.25) -- (7.25,13.25);
+\node at (3.5,11.25) [circ] {};
+\node at (5.5,11.25) [circ] {};
+\node at (5.5,13.25) [circ] {};
+\node at (3.5,13.25) [circ] {};
+\node [font=\Large] at (6.5,8) {$-$};
+\draw (6,9.75) to[short] (6,9);
+\draw (6,9.75) to[short] (5.5,9.75);
+\draw (2.5,12.75) to[crossing] (4.5,12.75);
+\draw (4.25,12.25) to[short] (4.75,12.25);
+\end{circuitikz}
+}%
+
+\label{fig:my_label}
+\end{figure}
+
+\sangria{El objetivo de esta parte es \textbf{mantener el mismo punto Q} (la misma $I_{DQ}$ y $V_{DSQ}$) que en el diseño con carga resistiva. Por lo tanto, la corriente de salida $I_O = I_{C2}$ de nuestro espejo de corriente debe ser igual a la corriente $I_{DQ}$ que calculamos en la primera parte. Para lograr esto, se debe calcular la resistencia $R_1$ que establece la corriente de referencia $I_R$. Asumiendo un $\beta$ alto, la corriente de referencia $I_R$ es aproximadamente igual a la corriente de salida $I_{C2}$. Por lo tanto, despejamos $R_1$ de la ecuación de la malla de entrada, usando la corriente $I_{DQ}$ deseada:}
+
+$$I_{R} = \frac{V_{DD}-V_{BE}}{R_{1}} \quad \xrightarrow{\quad \scalebox{1.2}{$\text{si } I_R \approx I_{C2} = I_{DQ}$} \quad} \quad R_{1} = \frac{V_{DD}-V_{BE}}{I_{DQ}}$$
+
+$$R_1=\frac{12V-0,7V}{3,325mA}\quad \rightarrow \quad R_1=3200\Omega \quad \xrightarrow{\quad \scalebox{1.2}{\text{Normalizado} \quad}} \quad R_1=3300\Omega $$
+
+\subsection{implementación circuito con carga activa}
+\midTitle{red}{Parte práctico}{}
+\sangria{Para la implementación de la carga activa, se procedió a calcular el valor de la resistencia $R_1$ para el espejo de corriente, con el objetivo de mantener el $I_{DQ}$ de diseño ($3.325\text{ mA}$). Sin embargo, la implementación práctica presentó serias dificultades. En un primer intento se utilizaron transistores PNP \textbf{MPSA92}, y posteriormente \textbf{A92 B331}. En ambos casos, el circuito falló: la señal de salida $v_L$ se observaba \textbf{severamente recortada}.}
+
+\sangria{Este recorte sugiere que el punto Q del JFET se estaba desplazando incorrectamente, probablemente empujando al transistor a la región óhmica. Esto puede ocurrir si el espejo de corriente no logra establecer una corriente de colector ($I_{DQ}$) estable, un problema común si los transistores (como los modelos de alto voltaje MPSA92) no están caracterizados para operar eficientemente a corrientes tan bajas, presentando un $\beta$ muy bajo o un $V_{BE}$ inconsistente.}
+
+
+\sangria{Finalmente, se implementó el espejo de corriente utilizando transistores \textbf{BC 557}, con los cuales el circuito funcionó correctamente. Se midieron los $\beta$ de ambos transistores, arrojando valores de \textbf{156 y 159}, lo cual es ideal para un espejo de corriente. Con esta configuración, se midió la corriente $I_{DQ}$ de forma indirecta, midiendo la caída de tensión en $R_S$ ($80.2\ \Omega$), la cual fue de $261.7\text{ mV}$, resultando en: $I_{DQ} = 3.263\text{ mA}$. El valor medido para $V_{DSQ}$ fue de \textbf{9.01\text{ V}}.}
+
+\begin{table}[H]
+\caption{Comparativa de los valores del punto Q}
+\label{tab:comparativa-q} % ¡Recordá usar un label único!
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|
+>{\columncolor[HTML]{FFCCC9}}c |
+c | c | c | c | c |}
+\hline
+\rowcolor[HTML]{FFFC9E}
+\textbf{Parámetro} & \textbf{Valor Calculado} & \textbf{Rango (\SI{\pm 10}{\%})} & \textbf{Medido (Pasivo)} & \textbf{Medido (Activo)} & \textbf{Desvío (Pasivo / Activo)} \\ \hline
+
+% Fila VDSQ
+$V_{DSQ}$ & 6 V & $[5.4\text{ V} , 6.6\text{ V}]$ & 6.12 V & 9.01 V & 2.0\% / 50.17\% \\ \hline
+
+% Fila IDQ
+$I_{DQ}$ & 3.325 mA & $[2.99\text{ mA} , 3.66\text{ mA}]$ & 3.144 mA & 3.263 mA & 5.4\% / 1.86\% \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+\midTitle{teal}{Resultados}{}
+
+\sangria{La implementación de la carga activa fue exitosa tras reemplazar los transistores PNP por el modelo \textbf{BC 557}. Los resultados de la polarización son notables: la corriente $I_{DQ}$ medida con la carga activa ($3.263\text{ mA}$) es \textbf{extremadamente cercana} al valor teórico de diseño ($3.325\text{ mA}$), con un desvío de solo \textbf{1.86\%}. Esto valida el diseño del espejo de corriente. Sin embargo, la tensión $V_{DSQ}$ ($9.01\text{ V}$) se desvía significativamente del objetivo de $6\text{ V}$. Esto es esperable, ya que la resistencia de salida $r_o$ del espejo de corriente es mucho más alta que la $R_D$ pasiva, reubicando el punto Q verticalmente, lo cual tendrá un impacto directo en la ganancia de tensión (Av) del amplificador.}
