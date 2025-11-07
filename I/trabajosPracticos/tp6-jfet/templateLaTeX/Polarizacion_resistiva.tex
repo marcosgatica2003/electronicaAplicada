@@ -105,7 +105,7 @@ $$V_{DD}=i_{D}*(R_{S} + R_{D})+V_{DS}$$
 $$R_D=-R_S +\frac{V_{DD}-V_{DS}}{I_{DQ}}$$
 $$R_D=1681,51\Omega \rightarrow R_D=1,8K\Omega$$
 
-\begin{table}[]
+\begin{table}[H]
 \caption{Valores del punto Q}
 \label{table2}
 \resizebox{\textwidth}{!}{%
@@ -131,13 +131,28 @@ $R_D$     & \multicolumn{1}{c|}{$1681.51\ \Omega$} & $1.8\ \text{k}\Omega$ \\ \h
 
 
 \begin{table}[H]
-\caption{Valores del punto Q, medido vs calculado}
-\label{table2}
-\begin{tabular}{|c|c|c|}
+\caption{Valores del punto Q: Comparación Calculados vs. Medidos}
+% \label{} % ¡Ponle una etiqueta (label) única!
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|
+>{\columncolor[HTML]{FFCCC9}}c |
+c | c | c | c |}
 \hline
 \rowcolor[HTML]{FFFC9E}
-\textbf{Parámetro}                & \textbf{Valor Calculado} & \textbf{Valor Medido} \\ \hline
-\cellcolor[HTML]{FFCCC9}$V_{DSQ}$ & $6 V$                      & $6,12 V$              \\ \hline
-\cellcolor[HTML]{FFCCC9}$I_{DQ}$  & $3.325mA$                & $3,144mA$
-\end{tabular}
+\textbf{Parámetro} & \textbf{Valor Calculado} & \textbf{Rango (\SI{\pm 10}{\%})} & \textbf{Valor Medido} & \textbf{Diferencia (\%)} \\ \hline
+
+% Datos de la fila VDSQ
+$V_{DSQ}$ & 6 V & $[5.4\text{ V} ; 6.6\text{ V}]$ & 6.12 V & 2.0\% \\ \hline
+
+% Datos de la fila IDQ
+$I_{DQ}$ & 3.325 mA & $[2.99\text{ mA} ; 3.66\text{ mA}]$ & 3.144 mA & 5.4\% \\ \hline
+\end{tabular}%
+}
 \end{table}
+
+\midTitle{teal}{Resultados}{}
+\sangria{Al comparar los resultados obtenidos en la "Parte analítica" con los medidos en la "Parte práctica", se observa una muy buena correlación entre el modelo teórico y el comportamiento real del circuito. Como se detalla en la \textbf{Tabla 3}, el valor medido de $V_{DSQ}$ ($6.12\text{ V}$) presentó una diferencia porcentual de solo \textbf{2.0\%} con respecto al valor calculado de $6\text{ V}$.}
+
+\sangria{Por su parte, la corriente $I_{DQ}$ medida ($3.144\text{ mA}$) tuvo un desvío del \textbf{5.4\%} frente al valor teórico de $3.325\text{ mA}$. Esta diferencia es atribuible a la discrepancia encontrada durante la implementación práctica. El valor calculado para la resistencia $R_S$ fue de $123.48\ \Omega$ (normalizado a $120\ \Omega$), pero en el laboratorio fue necesario ajustar este valor a $\mathbf{80}$ $\Omega$ para lograr la polarización correcta, tal como se describe en el texto de la parte práctica.}
+
+\sangria{Este ajuste en $R_S$ es la principal fuente del error porcentual en $I_{DQ}$. A pesar de esto, una diferencia del 5.4\% se considera aceptable y valida el modelo analítico como una herramienta de diseño eficaz, demostrando que los cálculos teóricos del punto Q sirvieron como una excelente aproximación para la implementación física.}
