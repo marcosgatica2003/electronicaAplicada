@@ -1,0 +1,9 @@
+\contentsline {section}{\numberline {1}Polarización del punto Q}{1}{}%
+\contentsline {subsection}{\numberline {1.1}Cálculos del punto Q}{2}{}%
+\contentsline {subsection}{\numberline {1.2}Implementación circuito carga pasiva}{3}{}%
+\contentsline {section}{\numberline {2}Polarización Con fuente de corriente}{3}{}%
+\contentsline {subsection}{\numberline {2.1}Cálculo de $R_1$}{3}{}%
+\contentsline {subsection}{\numberline {2.2}implementación circuito con carga activa}{4}{}%
+\contentsline {section}{\numberline {3}Polarización Con fuente de corriente}{4}{}%
+\contentsline {subsection}{\numberline {3.1}Cálculo de $R_1$}{4}{}%
+\contentsline {subsection}{\numberline {3.2}implementación circuito con carga activa}{5}{}%

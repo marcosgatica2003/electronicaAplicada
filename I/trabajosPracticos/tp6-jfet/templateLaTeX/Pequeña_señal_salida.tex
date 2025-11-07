@@ -1,0 +1,44 @@
+\subsection{Calculo experimental de impedancia de salida}
+\imagen[Circuito para medir impedancia de salida]{15cm}{./imagenes/pepe.png}
+\sangria{} Para medir la impedancia de salida se pasiva la fuente de señal de entrada y se conecta una resistencia sensora $R_S=1800\Omega$ en serie con un el capacitor de acoplamiento a la salida del circuito donde se inserta la señal de $1kHz$ y se mide la tensión $V_o=1V_{pp}$.
+\sangria{} La impedancia de salida se calcula como:
+\begin{center}
+    \large
+    \[ Z_o=\frac{V_o}{I_o}=\frac{V_o}{\frac{V_g-V_o}{R_S}} \]
+    \normalsize %
+\end{center}
+\midTitle{blue}{Mediciones Obtenidas}{}
+\begin{itemize}
+    \item $V_o=1V_{pp}$
+    \item $V_g=2,25V_{pp}$
+    \item $R_S=1800\Omega$
+\end{itemize}
+\sangria{} Con los valores obtenidos en las mediciones se tiene el siguiente resultado:
+\begin{center}
+    \Large
+    \[ Z_o=\frac{1V}{\frac{2,25V-1V}{1800\Omega}}=1384,61\Omega \]
+    \normalsize %
+\end{center}
+\sangria{} Con esta valor de impedancia de salida se puede calcular el valor de $r_{ds}$ del transistor:
+\begin{center}
+    \Large
+    \[ Z_o=r_{ds}//R_D \]
+    \[ r_{ds}=\frac{Z_o*R_D}{R_D-Z_o} \]
+    \[ r_{ds}=\frac{1384,61\Omega*1800\Omega}{1800\Omega-1384,61\Omega}=6000\Omega \]
+    \normalsize %
+\end{center}
+\midTitle{blue}{Comparación de valores obtenidos}{}
+\begin{center}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|
+>{\columncolor[HTML]{FFCCC9}}c |
+c | c |}
+\hline
+\rowcolor[HTML]{FFFFC7}
+\textbf{} & \textbf{Analítico} & \textbf{Experimental} \\ \hline
+$Z_i$& $1M\Omega$ & $1,088M\Omega$ \\ \hline
+$Z_o$ & $1681,51\Omega$ & $1384,61\Omega$ \\ \hline
+$A_V$ & $52,314$ & $27,027$ \\ \hline
+$A_i$ & $31,111K\Omega$ & $16,339K\Omega$ \\ \hline
+\end{tabular}
+\end{center}
