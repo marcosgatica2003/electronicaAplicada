@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.2)  7 NOV 2025 03:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.2)  7 NOV 2025 14:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1287,7 +1287,22 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 
 (./main.aux
 
+LaTeX Warning: Label `fig:15cm' multiply defined.
+
+
+LaTeX Warning: Label `fig:15cm' multiply defined.
+
+
 LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:10cm' multiply defined.
+
+
+LaTeX Warning: Label `fig:15cm' multiply defined.
+
+
+LaTeX Warning: Label `fig:10cm' multiply defined.
 
 )
 \openout1 = `main.aux'.
@@ -1463,11 +1478,11 @@ File: ./imagenes/utn.png Graphic file (type png)
 <use ./imagenes/utn.png>
 Package pdftex.def Info: ./imagenes/utn.png  used on input line 15.
 (pdftex.def)             Requested size: 85.35826pt x 92.47275pt.
-<./imagenes/caratula.png, id=5, 420.57124pt x 579.16376pt>
+<./imagenes/caratula.png, id=5, 88.1694pt x 110.21175pt>
 File: ./imagenes/caratula.png Graphic file (type png)
 <use ./imagenes/caratula.png>
 Package pdftex.def Info: ./imagenes/caratula.png  used on input line 16.
-(pdftex.def)             Requested size: 179.25418pt x 246.85274pt.
+(pdftex.def)             Requested size: 179.25418pt x 224.09912pt.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 10.0pt on input line 17.
 LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input lin
@@ -1588,7 +1603,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 10.0pt on input line 3.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
 (Font)              scaled to size 10.0pt on input line 3.
-<./imagenes/logoDepartamentoElectronica.png, id=28, 1027.84pt x 1027.84pt>
+<./imagenes/logoDepartamentoElectronica.png, id=29, 1027.84pt x 1027.84pt>
 File: ./imagenes/logoDepartamentoElectronica.png Graphic file (type png)
 <use ./imagenes/logoDepartamentoElectronica.png>
 Package pdftex.def Info: ./imagenes/logoDepartamentoElectronica.png  used on in
@@ -1611,7 +1626,44 @@ LaTeX Font Info:    Font shape `OT1/minntx/b/n' will be
 (Font)              scaled to size 7.3pt on input line 186.
 LaTeX Font Info:    Font shape `OT1/minntx/b/n' will be
 (Font)              scaled to size 5.5pt on input line 186.
-) (./Fuente_corriente.tex
+)
+(./Pequeña_señal_entrada.tex
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 9.0pt on input line 3.
+<./imagenes/pequena.png, id=41, 764.8575pt x 179.16937pt>
+File: ./imagenes/pequena.png Graphic file (type png)
+<use ./imagenes/pequena.png>
+Package pdftex.def Info: ./imagenes/pequena.png  used on input line 3.
+(pdftex.def)             Requested size: 426.79134pt x 99.97601pt.
+File: ./imagenes/logoDepartamentoElectronica.png Graphic file (type png)
+<use ./imagenes/logoDepartamentoElectronica.png>
+Package pdftex.def Info: ./imagenes/logoDepartamentoElectronica.png  used on in
+put line 18.
+(pdftex.def)             Requested size: 43.34933pt x 43.36243pt.
+ [3 <./imagenes/pequena.png>]
+<./imagenes/lala.png, id=48, 440.847pt x 235.47975pt>
+File: ./imagenes/lala.png Graphic file (type png)
+<use ./imagenes/lala.png>
+Package pdftex.def Info: ./imagenes/lala.png  used on input line 22.
+(pdftex.def)             Requested size: 426.79134pt x 227.96953pt.
+File: ./imagenes/logoDepartamentoElectronica.png Graphic file (type png)
+<use ./imagenes/logoDepartamentoElectronica.png>
+Package pdftex.def Info: ./imagenes/logoDepartamentoElectronica.png  used on in
+put line 49.
+(pdftex.def)             Requested size: 43.34933pt x 43.36243pt.
+ [4 <./imagenes/lala.png>]) (./Pequeña_señal_salida.tex
+<./imagenes/pepe.png, id=53, 365.56575pt x 253.54726pt>
+File: ./imagenes/pepe.png Graphic file (type png)
+<use ./imagenes/pepe.png>
+Package pdftex.def Info: ./imagenes/pepe.png  used on input line 3.
+(pdftex.def)             Requested size: 426.79134pt x 296.01071pt.
+File: ./imagenes/logoDepartamentoElectronica.png Graphic file (type png)
+<use ./imagenes/logoDepartamentoElectronica.png>
+Package pdftex.def Info: ./imagenes/logoDepartamentoElectronica.png  used on in
+put line 23.
+(pdftex.def)             Requested size: 43.34933pt x 43.36243pt.
+ [5 <./imagenes/pepe.png>])
+(./Fuente_corriente.tex
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 5.0pt on input line 64.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
@@ -1673,16 +1725,55 @@ LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 File: ./imagenes/logoDepartamentoElectronica.png Graphic file (type png)
 <use ./imagenes/logoDepartamentoElectronica.png>
 Package pdftex.def Info: ./imagenes/logoDepartamentoElectronica.png  used on in
-put line 71.
+put line 73.
 (pdftex.def)             Requested size: 43.34933pt x 43.36243pt.
-
-[3])
+ [6]) (./Fuente_Corriente_pequeña_señal.tex
+<./imagenes/corrienteZo.png, id=61, 327.02174pt x 260.172pt>
+File: ./imagenes/corrienteZo.png Graphic file (type png)
+<use ./imagenes/corrienteZo.png>
+Package pdftex.def Info: ./imagenes/corrienteZo.png  used on input line 3.
+(pdftex.def)             Requested size: 284.52756pt x 226.37558pt.
 File: ./imagenes/logoDepartamentoElectronica.png Graphic file (type png)
 <use ./imagenes/logoDepartamentoElectronica.png>
 Package pdftex.def Info: ./imagenes/logoDepartamentoElectronica.png  used on in
-put line 24.
+put line 3.
 (pdftex.def)             Requested size: 43.34933pt x 43.36243pt.
- [4] 
+ [7]
+<./imagenes/impesalida.jpg, id=65, 950.04938pt x 574.39594pt>
+File: ./imagenes/impesalida.jpg Graphic file (type jpg)
+<use ./imagenes/impesalida.jpg>
+Package pdftex.def Info: ./imagenes/impesalida.jpg  used on input line 4.
+(pdftex.def)             Requested size: 284.52756pt x 172.02211pt.
+<./imagenes/corrientesenal.png, id=66, 537.80925pt x 174.6525pt>
+File: ./imagenes/corrientesenal.png Graphic file (type png)
+<use ./imagenes/corrientesenal.png>
+Package pdftex.def Info: ./imagenes/corrientesenal.png  used on input line 23.
+(pdftex.def)             Requested size: 426.79134pt x 138.60556pt.
+File: ./imagenes/logoDepartamentoElectronica.png Graphic file (type png)
+<use ./imagenes/logoDepartamentoElectronica.png>
+Package pdftex.def Info: ./imagenes/logoDepartamentoElectronica.png  used on in
+put line 23.
+(pdftex.def)             Requested size: 43.34933pt x 43.36243pt.
+
+[8 <./imagenes/corrienteZo.png> <./imagenes/impesalida.jpg>]
+<./imagenes/impeentrada.png, id=71, 382.42876pt x 294.34969pt>
+File: ./imagenes/impeentrada.png Graphic file (type png)
+<use ./imagenes/impeentrada.png>
+Package pdftex.def Info: ./imagenes/impeentrada.png  used on input line 32.
+(pdftex.def)             Requested size: 284.52756pt x 219.00557pt.
+File: ./imagenes/logoDepartamentoElectronica.png Graphic file (type png)
+<use ./imagenes/logoDepartamentoElectronica.png>
+Package pdftex.def Info: ./imagenes/logoDepartamentoElectronica.png  used on in
+put line 44.
+(pdftex.def)             Requested size: 43.34933pt x 43.36243pt.
+ [9 <./imagenes/corrientesenal.png> <./imagenes/impeentrada.png>])
+File: ./imagenes/logoDepartamentoElectronica.png Graphic file (type png)
+<use ./imagenes/logoDepartamentoElectronica.png>
+Package pdftex.def Info: ./imagenes/logoDepartamentoElectronica.png  used on in
+put line 23.
+(pdftex.def)             Requested size: 43.34933pt x 43.36243pt.
+ [10]
+
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./main.aux)
  ***********
@@ -1695,13 +1786,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 59024 strings out of 467578
- 1532383 string characters out of 5424739
- 2284671 words of memory out of 5000000
- 87136 multiletter control sequences out of 15000+600000
- 695927 words of font info for 137 fonts, out of 8000000 for 9000
+ 59105 strings out of 467578
+ 1534825 string characters out of 5424739
+ 2285672 words of memory out of 5000000
+ 87205 multiletter control sequences out of 15000+600000
+ 699601 words of font info for 141 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 107i,26n,110p,845b,2273s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 107i,26n,110p,844b,2273s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb><c:/texlive/
 2025/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb><c:/texlive/2025/texmf-di
 st/fonts/type1/public/newtx/NewTXMI7.pfb><c:/texlive/2025/texmf-dist/fonts/type
@@ -1711,10 +1802,10 @@ texlive/2025/texmf-dist/fonts/type1/public/newtx/txsys.pfb><c:/texlive/2025/tex
 mf-dist/fonts/type1/public/newtx/ztmb.pfb><c:/texlive/2025/texmf-dist/fonts/typ
 e1/public/newtx/ztmbi.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/
 ztmr.pfb>
-Output written on main.pdf (8 pages, 1465288 bytes).
+Output written on main.pdf (14 pages, 2074190 bytes).
 PDF statistics:
- 99 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
+ 131 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 63 words of extra memory for PDF output out of 10000 (max. 10000000)
 

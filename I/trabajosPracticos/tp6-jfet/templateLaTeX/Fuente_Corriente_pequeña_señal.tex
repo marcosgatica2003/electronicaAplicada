@@ -1,99 +1,98 @@
 \subsection{Cálculo experimental de Zo}
-\imagen[Circuito para mediciones de Zo]{15cm}{./imagenes/corrienteZo.png}
-\imagen[Placa al realizar las mediciones para Zo]{15cm}{./imagenes/impesalida.jpg}
-\sangria{} Para medir la impedancia de salida se pasiva la fuente de señal y se conecta una resistencia sensora $R_S=123456$ en serie con un el capacitor de acoplamiento a la salida del circuito donde se inserta la señal de $1kHz$ y se mide la tensión $V_o=1V_{pp}$.
-\sangria{} La impedancia de salida se calcula como:
-\begin{center}
-    \Large
-    \[ Z_o=\frac{V_o}{I_o}=\frac{V_o}{\frac{V_g-V_o}{R_S}} \]
-    \normalsize %
-\end{center}
-\midTitle{blue}{Mediciones Obtenidas}{}
 
+\imagen[Circuito para mediciones de Zo]{10cm}{./imagenes/corrienteZo.png}
+\imagen[Placa al realizar las mediciones para Zo]{10cm}{./imagenes/impesalida.jpg}
+
+\sangria{Para medir la impedancia de salida se pasiva la fuente de señal de entrada ($V_i=0$) y se conecta una resistencia sensora ($R_{sensor}$) en serie con el capacitor de acoplamiento. Se inserta una señal de $1\text{ kHz}$ por esta rama y se mide la tensión $V_g$ (antes de la $R_{sensor}$) y $V_o$ (en el drenador), buscando ajustar $V_o=1\text{ V}_{pp}$.}
+
+\sangria{La impedancia de salida se calcula como:}
+$$Z_o=\frac{V_o}{I_o}=\frac{V_o}{\frac{V_g-V_o}{R_{sensor}}}$$
+
+\midTitle{blue}{Mediciones Obtenidas (Zo Activa)}{}
 \begin{itemize}
-    \item $V_o=1Vpp$
-    \item $V_g=5,1Vpp$
-    \item $Rs=6,8K\Omega$
+    \item $V_o=1\text{ V}_{pp}$
+    \item $V_g=5,1\text{ V}_{pp}$
+    \item $R_{sensor}=6,8\text{ k}\Omega$
 \end{itemize}
-\sangria{} Con los valores obtenidos en las mediciones se tiene el siguiente resultado:
-\begin{center}
-    \Large
-    \[ Z_o=\frac{1V}{\frac{5,1V-1V}{6,8K\Omega}}=1653,54\Omega \]
-    \normalsize %
-\end{center}
-\sangria{} Para el cálculo de los parámetros de pequeña señal se utiliza el modelo híbrido de pequeña señal de la conficuración surtidor común con fuente de corriente:
+
+\sangria{Con los valores obtenidos en las mediciones se tiene el siguiente resultado:}
+$$Z_o=\frac{1\text{ V}}{\frac{5,1\text{ V}-1\text{ V}}{6,8\text{ k}\Omega}} \quad \rightarrow \quad Z_o = \frac{1\text{ V}}{0,6029\text{ mA}} \quad \rightarrow \quad Z_o \approx 1658,5\ \Omega$$
+
+\sangria{Para el cálculo de los parámetros de pequeña señal se utiliza el modelo híbrido de la configuración surtidor común con fuente de corriente:}
+
 \imagen[Circuito para análisis de pequeña señal]{15cm}{./imagenes/corrientesenal.png}
-\sangria{} 
-\sangria{} Ahora se puede despejar el valor da la impedancia de salida del trasnistor $1/h_{oe}$ a partir del valor medido de Zo y el valor calculado de $r_{ds}$:
-\begin{center}
-    \Large
-    \[ Z_o = (\frac{1}{r_{ds}}+\frac{1}{1/h_{oe}})^{-1} \]
-    \[ \frac{1}{Z_o} = \frac{1}{r_{ds}}+h_{oe} \]
-    \[ h_{oe}=\frac{1}{Z_o}-\frac{1}{r_{ds}}\]
-    \[ h_{oe}=438,1\mu S \]
-    \[\frac{1}{h_{oe}}=2282,5\Omega \]
-    \normalsize %
-\end{center}
+
+\sangria{Ahora se puede despejar el valor de la impedancia de salida del transistor BJT ($1/h_{oe}$) a partir del valor medido de $Z_o$ y el valor de $r_{ds}$ (calculado en $7200\ \Omega$ en la sección anterior):}
+$$Z_o = r_{ds} \parallel \frac{1}{h_{oe}} \quad \rightarrow \quad \frac{1}{Z_o} = \frac{1}{r_{ds}}+h_{oe}$$
+$$h_{oe}=\frac{1}{Z_o}-\frac{1}{r_{ds}} \quad \rightarrow \quad h_{oe}=\frac{1}{1658,5\ \Omega}-\frac{1}{7200\ \Omega} \quad \rightarrow \quad h_{oe} \approx 464,1\ \mu S$$
+$$\frac{1}{h_{oe}} \approx 2154,7\ \Omega$$
+
 
 \subsection{Cálculos experimentales de Zi, Av y Ai}
-% poner fotossss
+\imagen[Circuito para primera parte de pequeña señal]{10cm}{./imagenes/impeentrada.png}
 
-\imagen[Circuito para primera parte de pequeña señal]{15cm}{./imagenes/impeentrada.png}
+\sangria{Para hacer las mediciones de la impedancia de entrada, ganancia de tensión y ganancia de corriente se inserta la señal de $1\text{ kHz}$ por el capacitor de acoplamiento en la \textbf{compuerta} del transistor ($C_i$) y se aumenta la tensión de la señal de entrada hasta tener una tensión de salida de $V_L=1\text{ V}_{pp}$.}
 
-\sangria{} Para hacer las mediciones de la impedancia de entrada, ganancia de tensión y ganancia de corriente se inserta la señal de $1kHz$ por el capacitor de acoplamiento en la base del transistor $C_i$ y se va aumentando la tensión de la señal de entrada hasta tener una tensión de salida de $V_L=1V_{pp}$.
-\sangria{} Para hacer estas mediciones se se agrega una resistencia en serie en la entrada de la base denominada resistencia sensora $R_S=6000\Omega$ Donde se mide la tensión $V_g$ y $V_i$.
-\sangria{} 
-\sangria{} La impedancia de entrada se calcula como:
-\begin{center}
-    \Large
-    \[ Z_i=\frac{V_i}{I_i}=\frac{V_i}{\frac{V_g-V_i}{R_S}} \]
-    \normalsize %
-\end{center}
-\sangria{} La ganancia de corriente se calcula como:
-\begin{center}
-    \Large
-\begin{equation*}
-    A_i=\frac{i_L}{i_i}=\frac{V_L/R_L}{(V_g-V_i)/R_S},     Donde R_L=\frac{1}{h_{oe}}
-\end{equation*}
-    \normalsize %
-\end{center}
-\sangria{} La ganancia de tensión se calcula como:
-\begin{center}
-    \Large
-\begin{equation*}
-    A_v=\frac{V_L}{V_i} 
-\end{equation*}
-    \normalsize %
-\end{center}
+\sangria{Para estas mediciones se agrega una resistencia en serie en la entrada de la compuerta, denominada resistencia sensora $R_{sensor}=\SI{1}{\mega\ohm}$. Se mide la tensión $V_g$ (antes de la $R_{sensor}$) y $V_i$ (en la compuerta).}
 
-\midTitle{blue}{Mediciones Obtenidas}{}
+\sangria{La impedancia de entrada se calcula como:}
+$$Z_i=\frac{V_i}{I_i}=\frac{V_i}{\frac{V_g-V_i}{R_{sensor}}}$$
 
+\sangria{La ganancia de corriente se calcula como:}
+$$A_i=\frac{i_L}{i_i}=\frac{V_L/R_L}{(V_g-V_i)/R_{sensor}}, \quad \text{donde } R_L = Z_o \approx 1/h_{oe}$$
+
+\newpage
+
+\sangria{La ganancia de tensión se calcula como:}
+$$A_v=\frac{V_L}{V_i}$$
+
+\midTitle{blue}{Mediciones Obtenidas (Zi, Av, Ai Activa)}{}
 \begin{itemize}
-    \item $V_L=1V_{pp}$
-    \item $V_i=22.5mV_{pp}$
-    \item $V_g=37.5mV_{pp}$
-    \item $R_S=1M\Omega$
+    \item $V_L=1\text{ V}_{pp}$
+    \item $V_i=22.5\text{ mV}_{pp}$
+    \item $V_g=37.5\text{ mV}_{pp}$
+    \item $R_{sensor}=\SI{1}{\mega\ohm}$
 \end{itemize}
-\sangria{} 
-\sangria{} Con los valores obtenidos en las mediciones se tienen los siguientes resultados:  
-\begin{center}
-    \Large
-    \[ Z_i=\frac{22.5mV}{\frac{32.5mV-22.5mV}{1M\Omega}}=1,5M\Omega \]
-    \normalsize %
-\end{center}
-\begin{center}
-    \Large
-\begin{equation*}
-    A_i=\frac{1V/2282,5\Omega}{(37.5mV-22.5mV)/1M\Omega}=29207,7
-\end{equation*}
-    \normalsize %
-\end{center}
-\begin{center}
-    \Large
-\begin{equation*}
-    A_v=\frac{V_L}{V_i}=\frac{1V}{22.5mV}=44,44
-\end{equation*}
-    \normalsize %
-\end{center}
+
+\sangria{Con los valores obtenidos en las mediciones se tienen los siguientes resultados. Para $R_L$ se utiliza el valor de $1/h_{oe}$ calculado ($2154,7\ \Omega$):}
+
+$$Z_i=\frac{22.5\text{ mV}}{\frac{37.5\text{ mV}-22.5\text{ mV}}{1\text{ M}\Omega}} \quad \rightarrow \quad Z_i = 1,5\text{ M}\Omega$$
+
+$$A_i=\frac{1\text{ V} / 2154,7\ \Omega}{(37.5\text{ mV}-22.5\text{ mV})/1\text{ M}\Omega} \quad \rightarrow \quad A_i \approx 30924$$
+
+$$A_v=\frac{1\text{ V}}{22.5\text{ mV}} \quad \rightarrow \quad A_v \approx 44,44$$
 
 
+% --- TABLA COMPARATIVA FINAL ---
+\begin{table}[H]
+\caption{Comparativa de parámetros de Pequeña Señal (Carga Pasiva vs. Carga Activa)}
+\label{tab:comparativa-ac-completa} % ¡Recordá usar un label único!
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|
+>{\columncolor[HTML]{FFCCC9}}c |
+c | c | c | c | c |}
+\hline
+\rowcolor[HTML]{FFFC9E}
+\textbf{Parámetro} & \textbf{Calculado (Pasivo)} & \textbf{Medido (Pasivo)} & \textbf{Medido (Activo)} & \textbf{Desvío (Pasivo)} & \textbf{Desvío (Activo)} \\ \hline
+
+% Fila Zi
+$Z_i$ & $\SI{1}{\mega\ohm}$ & $1,088\text{ M}\Omega$ & $1,5\text{ M}\Omega$ & 8,8\% & 50,0\% \\ \hline
+
+% Fila Zo
+$Z_o$ & $1681,51\ \Omega$ & $1440\ \Omega$ & $1658,5\ \Omega$ & 14,4\% & 1,4\% \\ \hline
+
+% Fila Av
+$A_v$ & $20,62$ & $27,027$ & $44,44$ & 31,1\% & 115,5\% \\ \hline
+
+% Fila Ai
+$A_i$ & $12263$ & $16339$ & $30924$ & 33,2\% & 152,2\% \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+% --- SECCIÓN DE RESULTADOS ---
+\midTitle{teal}{Resultados}{}
+
+\sangria{Al medir la impedancia de salida $Z_o$ de la configuración con carga activa, fue necesario seleccionar una resistencia sensora ($R_{sensor}$) adecuada. Basándonos en el análisis de la sección anterior, sabíamos que $Z_o$ sería el paralelo entre $r_{ds}$ y $1/h_{oe}$. Estimamos que la impedancia de salida de la fuente de corriente ($1/h_{oe}$) sería muy elevada, por lo tanto, $Z_o$ estaría dominada por $r_{ds}$. Habiendo calculado $r_{ds} \approx 7,2\text{ k}\Omega$, se seleccionó un valor comercial del mismo orden, $R_{sensor} = 6,8\text{ k}\Omega$, para obtener una buena sensibilidad en la medición.}
+
+\sangria{Los resultados de la tabla comparativa son muy reveladores. La impedancia de salida $Z_o$ medida con la carga activa ($1658,5\ \Omega$) es mucho más cercana al valor teórico ($1681,51\ \Omega$) que la medida con la carga pasiva, con un desvío de solo \textbf{1.4\%}. Sin embargo, la ganancia de tensión ($A_v = 44,44$) y de corriente ($A_i = 30924$) se dispararon, \textbf{duplicando (y más)} las ganancias obtenidas con la carga pasiva. Esto confirma el objetivo de la carga activa: al presentar una impedancia de carga de CA ($1/h_{oe} \approx 2154,7\ \Omega$) mucho mayor que la $R_D$ pasiva ($1,8\text{ k}\Omega$), la ganancia total del amplificador se incrementa drásticamente.}

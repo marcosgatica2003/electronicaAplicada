@@ -1,84 +1,51 @@
-\section{Mediciones de pequeña señal }
+\subsection{Cálculo analítico $A_{i} \ A_{V} \ Z_{i}$}
+
 \imagen[Modelo híbrido de pequeña señal]{15cm}{./imagenes/pequena.png}
-\sangria{} Para el análisis de pequeña señal, se utiliza el modelo híbrido de pequeña señal del JFET. Donde la impedancia de entrada es igual al valor de la resistencia $Z_i=R_G$. La impedancia de salida es la resistencia $r_{ds}$ en paralelo con la resistencia de drenaje $R_D$.
-\sangria{} Como el valor de $r_{ds}$ es muy grande, se puede despreciar su efecto en el circuito. Por lo tanto, la impedancia de salida queda $Z_o \approx R_D$.
-\sangria{} Por lo tanto:
-\begin{equation*}
-    Z_i = R_G = \SI{1}{\mega\ohm}
-\end{equation*}
-\begin{equation*}
-    Z_o \approx R_D = \SI{1681,51}{\ohm}
-\end{equation*}
-\sangria{} La ganancia de tensión se calcula como:
-\begin{equation*}
-    A_v = -g_m \cdot R_D
-\end{equation*}
-\begin{equation*}
-    A_v = -(-\frac{2I_{DSS}}{V_{GSoff}})(1-\frac{V_{GSQ}}{V_{GSoff}}) \cdot R_D
-\end{equation*}
-\begin{equation*}
-        A_v = -(-\frac{2(6.25mA)}{1,402V})(1-\frac{6V}{1,402V}) \cdot \SI{1681,51}{\ohm}
-\end{equation*}
-\begin{equation*}
-        A_v = 52,314
-\end{equation*}
-\sangria{} Por lo tanto, la ganancia de corriente es:
-\begin{equation*}
-    A_i = -g_m \cdot R_G
-\end{equation*} 
-\begin{equation*}
-    A_i = -(-\frac{2I_{DSS}}{V_{GSoff}})(1-\frac{V_{GSQ}}{V_{GSoff}}) \cdot R_G 
-\end{equation*}
-\begin{equation*}
-        A_i = -(-\frac{2(6.25mA)}{1,402V})(1-\frac{6V}{1,402V}) \cdot \SI{1}{\mega\ohm}
-\end{equation*}
-\begin{equation*}
-        A_i = 31111
-\end{equation*}
-\subsection{Calculo experimental de ganancia de tensión, corriente e impedancia de entrada}
+
+\sangria{Para el análisis de pequeña señal, se utiliza el modelo híbrido del JFET. La impedancia de entrada es igual al valor de la resistencia de compuerta:}
+$$Z_i = R_G \quad \rightarrow \quad Z_i = \SI{1}{\mega\ohm}$$
+
+\sangria{La impedancia de salida es la resistencia $r_{ds}$ en paralelo con la resistencia de drenaje $R_D$. Como el valor de $r_{ds}$ es muy grande, se puede despreciar su efecto en el circuito. Por lo tanto, la impedancia de salida queda:}
+$$Z_o \approx R_D \quad \rightarrow \quad Z_o \approx \SI{1681,51}{\ohm}$$
+
+\sangria{La ganancia de tensión se calcula como:}
+$$A_v = -g_m \cdot R_D \quad \text{donde} \quad g_m = \left(-\frac{2I_{DSS}}{V_{GSoff}}\right) \left(1-\frac{V_{GSQ}}{V_{GSoff}}\right)$$
+\sangria{Utilizando los valores calculados en la sección anterior ($I_{DSS}=6,650\text{ mA}$, $V_{GSoff}=1,402\text{ V}$ y $V_{GSQ}=-0,4106\text{ V}$):}
+$$g_m = \left(-\frac{2(6,650\text{ mA})}{1,402\text{ V}}\right) \left(1-\frac{-0,4106\text{ V}}{1,402\text{ V}}\right) = (-9,486\text{ mS}) \cdot (1 + 0,2929) \quad \rightarrow \quad g_m \approx -12,26\text{ mS}$$
+$$A_v = -(-12,26\text{ mS}) \cdot \SI{1681,51}{\ohm} \quad \rightarrow \quad A_v \approx 20,62$$
+
+\sangria{La ganancia de corriente se calcula como la relación entre el $g_{m}$ multiplicado $R_{g}$:}
+$$A_i = -g_{m} \cdot R_{G} \quad \rightarrow \quad A_i = 12,26 mS \cdot 1\ M\Omega \quad \rightarrow \quad A_i \approx12264,71 $$
+
+\subsection{Cálculo experimental de ganancia de tensión, corriente e impedancia de entrada}
+
 \imagen[Circuito para realizar las mediciones de pequeña señal]{15cm}{./imagenes/lala.png}
-\sangria{} Para hacer las mediciones de la impedancia de entrada, ganancia de tensión y ganancia de corriente se inserta la señal de $1kHz$ por el capacitor de acoplamiento en la base del transistor $C_i$ y se va aumentando la tensión de la señal de entrada hasta tener una tensión de salida de $V_L=1V_{pp}$, $V_L$ se mide la rama del drenador y $R_D$.
-\sangria{} Para hacer estas mediciones se se agrega una resistencia en serie en la entrada de la base denominada resistencia sensora $R_S=1M\Omega$ que es igual a $Z_i$ calculado anteriormente.En este resistor se mide la tensión $V_g$ y $V_i$.
-\sangria{}
-\sangria{} La impedancia de entrada se calcula como:
-\begin{center}
-    \Large
-    \[ Z_i=\frac{V_i}{I_i}=\frac{V_i}{\frac{V_g-V_i}{R_S}} \]
-    \normalsize %
-\end{center}
-\sangria{} La ganancia de corriente se calcula como:
-\begin{center}
-    \Large
-    \[ A_i=\frac{i_L}{i_i}=\frac{V_L/R_L}{(V_g-V_i)/R_S} \]
-    \normalsize %
-\end{center}
-\sangria{} La ganancia de tensión se calcula como:
-\begin{center}
-    \Large
-    \[ A_v=\frac{V_L}{V_i} \]
-    \normalsize %
-\end{center}
+
+\sangria{Para hacer las mediciones de la impedancia de entrada, ganancia de tensión y ganancia de corriente, se inserta una señal de $1\text{ kHz}$ por el capacitor de acoplamiento en la \textbf{compuerta} del transistor ($C_i$) y se aumenta la tensión de la señal de entrada hasta tener una tensión de salida $V_L=1\text{ V}_{pp}$. $V_L$ se mide en la rama del drenador, sobre $R_D$.}
+
+\sangria{Para estas mediciones se agrega una resistencia en serie en la entrada de la compuerta, denominada resistencia sensora ($R_{sensor}$, $R_s$ en el diagrama de la guía), de $\SI{1}{\mega\ohm}$. En esta configuración se mide la tensión $V_g$ (antes de la resistencia sensora) y $V_i$ (después de la resistencia, en la compuerta).}
+
+\sangria{La impedancia de entrada se calcula como:}
+$$Z_i=\frac{V_i}{I_i} = \frac{V_i}{\frac{V_g-V_i}{R_{sensor}}}$$
+
+\sangria{La ganancia de corriente se calcula como:}
+$$A_i=\frac{i_L}{i_i} = \frac{V_L/R_L}{(V_g-V_i)/R_{sensor}}$$
+
+\sangria{La ganancia de tensión se calcula como:}
+$$A_v=\frac{V_L}{V_i}$$
+
 \midTitle{blue}{Mediciones Obtenidas}{}
 \begin{itemize}
-    \item $V_L=1V_{pp}$
-    \item $V_i=37mV_{pp}$
-    \item $V_g=71mV_{pp}$
-    \item $R_S=1M\Omega$
-    \item $R_L=R_D=1800\Omega$
+    \item $V_L=1\text{ V}_{pp}$
+    \item $V_i=37\text{ mV}_{pp}$
+    \item $V_g=71\text{ mV}_{pp}$
+    \item $R_{sensor}=\SI{1}{\mega\ohm}$
+    \item $R_L=R_D \text{ (normalizada)} = \SI{1.8}{\kilo\ohm}$
 \end{itemize}
-\sangria{} Con los valores obtenidos en las mediciones se tienen los siguientes resultados:  
-\begin{center}
-    \Large
-    \[ Z_i=\frac{3,7mV}{\frac{71mV-37mV}{1M\Omega}}=1,088M\Omega \]
-    \normalsize %
-\end{center}
-\begin{center}
-    \Large
-    \[ A_i=\frac{1V/1800\Omega}{(71mV-37mV)/1M\Omega}=16,339K \]
-    \normalsize %
-\end{center}
-\begin{center}
-    \Large
-    \[ A_v=\frac{V_L}{V_i}=\frac{1V}{37mV}=27,027 \]
-    \normalsize %
-\end{center}
+
+\sangria{Con los valores obtenidos en las mediciones se tienen los siguientes resultados:}
+$$Z_i=\frac{37\text{ mV}}{\frac{71\text{ mV}-37\text{ mV}}{1\text{ M}\Omega}} \quad \rightarrow \quad Z_i \approx 1,088\text{ M}\Omega$$
+
+$$A_i=\frac{1\text{ V} / 1800\ \Omega}{(71\text{ mV}-37\text{ mV})/1\text{ M}\Omega} \quad \rightarrow \quad A_i \approx 16339$$
+
+$$A_v=\frac{1\text{ V}}{37\text{ mV}} \quad \rightarrow \quad A_v \approx 27,027$$
