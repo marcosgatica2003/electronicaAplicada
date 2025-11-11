@@ -8,4 +8,5 @@
 \contentsline {subsection}{\numberline {2.1}Cálculo de $R_1$}{6}{}%
 \contentsline {subsection}{\numberline {2.2}implementación circuito con carga activa}{7}{}%
 \contentsline {subsection}{\numberline {2.3}Cálculo experimental de Zo}{8}{}%
-\contentsline {subsection}{\numberline {2.4}Cálculos experimentales de Zi, Av y Ai}{9}{}%
+\contentsline {subsection}{\numberline {2.4}Cálculo analítico $A_{i} \ A_{V} \ Z_{i}$ (Carga Activa)}{9}{}%
+\contentsline {subsection}{\numberline {2.5}Cálculos experimentales de Zi, Av y Ai (Carga Activa)}{9}{}%

@@ -1,8 +1,9 @@
 \newpage
 \section{Polarización del punto Q}
 \midTitle{red}{Parte analítica}{}
-\sangria{En este trabajo implementamos un transistor JFET en configuración fuente común, para aplicar el modelo MES, en esta oportunidad implementamos el modelo con autopolarización. Nuestros datos iniciales fueron $V_{DD}= 12V$ $R_G=1M\Omega$, además contabamos también con los datos del punto Q ya predefinidos $I_{DQ}=\frac{I_{DSS}}{2}$ y $V_{DSQ}=\frac{V_{DD}}{2}$}
-\sangria{Primero revelamos la curva de $I_{DSS}$, para luego calcular $R_S$ $R_D$, la curva relevada fue la siguiente.}
+\sangria{En este trabajo implementamos un transistor JFET en configuración fuente común, para aplicar el modelo MES, en esta oportunidad implementamos el modelo con autopolarización.
+Nuestros datos iniciales fueron $V_{DD}= 12V$ $R_G=1M\Omega$, además contábamos también con los datos del punto Q ya predefinidos $I_{DQ}=\frac{I_{DSS}}{2}$ y $V_{DSQ}=\frac{V_{DD}}{2}$}
+\sangria{Primero relevamos la curva de $I_{DSS}$, para luego calcular $R_S$ $R_D$, la curva relevada fue la siguiente.}
 
 \midTitle{blue}{Mediciones de $I_{DSS}$ Obtenidas}{}
 
@@ -33,7 +34,8 @@ c | c |}
 \end{center}
 
 \begin{figure}[H]
-    \centering
+
+   \centering
     \begin{tikzpicture}
     \begin{axis}[
         title={Curva característica de JFET (K117) ($V_{GS} = 0$)}, % Título del gráfico
@@ -54,6 +56,7 @@ c | c |}
         (0.440, 4.530)
         (0.600, 5.500)
         (0.820, 6.050)
+
         (1.015, 6.390)
         (1.235, 6.560)
         (1.402, 6.650)
@@ -65,7 +68,7 @@ c | c |}
         (2.609, 6.913)
         (2.830, 6.942)
     };
-    \addlegendentry{Mediciones $I_{DSS}$}
+\addlegendentry{Mediciones $I_{DSS}$}
 
     \end{axis}
     \end{tikzpicture}
@@ -104,12 +107,13 @@ c | c |}
 \label{fig:my_label}
 \end{figure}
 
-\sangria{Una vez revelada la curva, el valor de $I_{DSS}$ se extrajo a partir de las diferencias porcentules del mismo valor, el valor elejido fue: $I_{DSS} = 6,650\text{ mA}$, ya que la diferencia porcentual con el valor anterior fue del $1.4\%$, el valor de tensión en este punto se denomina $V_{GSoff}$ y es de $V_{GSoff}=1,402\text{ V}$}
+\sangria{Una vez revelada la curva, el valor de $I_{DSS}$ se extrajo a partir de las diferencias porcentuales del mismo valor, el valor elegido fue: $I_{DSS} = 6,650\text{ mA}$, ya que la diferencia porcentual con el valor anterior fue del $1.4\%$, el valor de tensión en este punto se denomina $V_{GSoff}$ y es de $V_{GSoff}=-1,402\text{ V}$}
 
 $$I_{DQ}=\frac{I_{DSS}}{2} \quad \rightarrow \quad I_{DQ}=\frac{6,650\text{ mA}}{2} \quad \rightarrow \quad I_{DQ}=3,325\text{ mA}$$
 $$V_{DSQ}=\frac{V_{DD}}{2} \quad \rightarrow \quad V_{DSQ}=\frac{12\text{ V}}{2} \quad \rightarrow \quad V_{DSQ}=6\text{ V}$$
 
-\sangria{El siguiente paso fue calcular las resistencias para situar el punto Q, para esto primero obtenemos el valor de $V_{GS}$ para luego obtener $R_S$ y finalmente obtenemos $R_D$. Las ecuaciones de las cuales obtenemos estos valores son las siguiente:}
+\sangria{El siguiente paso fue calcular las resistencias para situar el punto Q, para esto primero obtenemos el valor de $V_{GS}$ para luego obtener $R_S$ y finalmente
+obtenemos $R_D$. Las ecuaciones de las cuales obtenemos estos valores son las siguientes:}
 
 
 $$i_{D}=I_{DSS} \cdot \left(1-\frac{V_{GS}}{V_{GSoff}}\right)^2$$
@@ -119,43 +123,45 @@ $$V_{DD}=i_{D} \cdot (R_{S} + R_{D})+V_{DS}$$
 \sangria{De la primera ecuación despejamos $V_{GS}$, como nos encontramos en el punto Q, podemos sustituir $i_D$ por $I_{DQ}$ y queda:}
 
 
-$$V_{GS}=\left(\sqrt{\frac{I_{DQ}}{I_{DSS}}}-1\right) \cdot (-V_{GSoff}) \quad \rightarrow \quad V_{GS}=\left(\sqrt{\frac{I_{DSS}/2}{I_{DSS}}}-1\right) \cdot (-1,402\text{ V}) \quad \rightarrow \quad V_{GS}=-0,4106\text{ V}$$
+$$V_{GS}=\left(\sqrt{\frac{I_{DQ}}{I_{DSS}}}-1\right) \cdot (-V_{GSoff}) \quad \rightarrow \quad V_{GS}=\left(\sqrt{\frac{I_{DSS}/2}{I_{DSS}}}-1\right) \cdot (1,402\text{ V}) \quad \rightarrow \quad V_{GS}=-0,4106\text{ V}$$
 
 
 \sangria{Con este dato podemos obtener $R_S$ a partir de la segunda ecuación:}
 
-$$R_S=\left|\frac{-V_{GS}}{I_{DQ}}\right| = \left|\frac{-(-0,4106\text{ V})}{3,325\text{ mA}}\right| = 123,48\ \Omega \quad \xrightarrow{\text{Normalizado}} \quad R_S=120\ \Omega$$
+$$R_S=\left|\frac{-V_{GS}}{I_{DQ}}\right|
+= \left|\frac{-(-0,4106\text{ V})}{3,325\text{ mA}}\right| = 123,48\ \Omega \quad \xrightarrow{\text{Normalizado}} \quad R_S=120\ \Omega$$
 
-\sangria{Ya con este valor podemos calcular $R_D$ apartir de la 3ra ecuación. Para el cálculo de $R_D$ se utiliza el valor no normalizado de $R_S$ para mayor precisión:}
+\sangria{Ya con este valor podemos calcular $R_D$ a partir de la 3ra ecuación.
+Para el cálculo de $R_D$ se utiliza el valor no normalizado de $R_S$ para mayor precisión:}
 
 
 $$R_D=-R_S +\frac{V_{DD}-V_{DSQ}}{I_{DQ}} = -123,48\ \Omega +\frac{12\text{ V}-6\text{ V}}{3,325\text{ mA}} = 1681,51\ \Omega \quad \xrightarrow{\text{Normalizado}} \quad R_D=1,8\text{ k}\Omega$$
 
 
 \begin{table}[H]
-\caption{Valores del punto Q, medido vs calculado
-}
-\label{table1}
+\caption{Valores del punto Q}
+\label{table2}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{|
->{\columncolor[HTML]{FFCCC9}}c |c|c|}
+>{\columncolor[HTML]{FFCCC9}}c |cc|}
 \hline
-\cellcolor[HTML]{FFFC9E}\textbf{Parámearo} &
-  \cellcolor[HTML]{FFFC9E}\textbf{Valor Calculado (No normalizado) / Calculado} &
+\cellcolor[HTML]{FFFC9E}\textbf{Parámetro} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{FFFC9E}\textbf{Valor Calculado (No normalizado)}} &
   \cellcolor[HTML]{FFFC9E}\textbf{Valor Normalizado (Comercial)} \\ \hline
-$V_{GSQ}$ & $-0.4106\text{ V}$ & -----                 \\ \hline
-$I_{DQ}$  & $3.325\text{ mA}$  & -----                 \\ \hline
-$V_{DSQ}$ & $6\text{ V}$       & -----                 \\ \hline
-$R_S$     & $123.48\ \Omega$   & $120\ \Omega$         \\ \hline
-$R_D$     & $1681.51\ \Omega$  & $1.8\ \text{k}\Omega$ \\ \hline
+$V_{GSQ}$ & \multicolumn{1}{c|}{$-0.4106\text{ V}$} & --- \\ \hline
+$I_{DQ}$  & \multicolumn{1}{c|}{$3.325\text{ mA}$}  & --- \\ \hline
+$V_{DSQ}$ & \multicolumn{1}{c|}{$6\text{ V}$}       & --- \\ \hline
+$R_S$     & \multicolumn{1}{c|}{$123.48\ \Omega$}   & $120\ \Omega$         \\ \hline
+$R_D$     & \multicolumn{1}{c|}{$1681.51\ \Omega$}  & $1.8\ \text{k}\Omega$ \\ \hline
 \end{tabular}%
 }
 \end{table}
 
 \subsection{Implementación circuito carga pasiva}
 \midTitle{red}{Parte práctica}{}
-\sangria{Cuando implementamos el circuito con un transitor JFET K117 y medimos, tuvimos que hacer un cambio en $R_S$, ya que la polarización no daba de la manera correcta, fuimos bajando el valor hasta llegar a $80\Omega$, con ese valor la polarizacón nos dió los isguientes valores:}
-\sangria{Para medir $I_{DQ}$ divimos la tensión medida en la resitencia $R_D$, dividido el valor de esta ($1,8k$), el resatuda fue de $I_{DQ}=3,144mA$ y la $V_{DS}=6,12V$}
+\sangria{Cuando implementamos el circuito con un transistor JFET K117 y medimos, tuvimos que hacer un cambio en $R_S$, ya que la polarización no daba de la manera correcta, fuimos bajando el valor hasta llegar a $80\ \Omega$, con ese valor la polarización nos dio los siguientes valores:}
+\sangria{Para medir $I_{DQ}$ dividimos la tensión medida en la resistencia $R_D$, dividido el valor de esta ($1,8\text{ k}\Omega$), el resultado fue de $I_{DQ}=3,144\text{ mA}$ y
+la $V_{DS}=6,12\text{ V}$}
 
 
 
@@ -171,19 +177,24 @@ c | c | c | c |}
 \textbf{Parámetro} & \textbf{Valor Calculado} & \textbf{Rango (\SI{\pm 10}{\%})} & \textbf{Valor Medido} & \textbf{Diferencia (\%)} \\ \hline
 
 % Datos de la fila VDSQ
-$V_{DSQ}$ & 6 V & $[5.4\text{ V} ; 6.6\text{ V}]$ & 6.12 V & 2.0\% \\ \hline
+$V_{DSQ}$ & 6 V & $[5.4\text{ V} ;
+6.6\text{ V}]$ & 6.12 V & 2.0\% \\ \hline
 
 % Datos de la fila IDQ
-$I_{DQ}$ & 3.325 mA & $[2.99\text{ mA} ; 3.66\text{ mA}]$ & 3.144 mA & 5.4\% \\ \hline
+$I_{DQ}$ & 3.325 mA & $[2.99\text{ mA} ;
+3.66\text{ mA}]$ & 3.144 mA & 5.4\% \\ \hline
 \end{tabular}%
 }
 \end{table}
 
 
 \midTitle{teal}{Resultados}{}
-\sangria{Al comparar los resultados obtenidos en la ``Parte analítica`` con los medidos en la ``Parte práctica``, se observa una muy buena correlación entre el modelo teórico y el comportamiento real del circuito. Como se detalla en la \textbf{Tabla 3}, el valor medido de $V_{DSQ}$ ($6.12\text{ V}$) presentó una diferencia porcentual de solo \textbf{2.0\%} con respecto al valor calculado de $6\text{ V}$.}
+\sangria{Al comparar los resultados obtenidos en la ``Parte analítica`` con los medidos en la ``Parte práctica``, se observa una muy buena correlación entre el modelo teórico y el comportamiento real del circuito.
+Como se detalla en la \textbf{Tabla 3}, el valor medido de $V_{DSQ}$ ($6.12\text{ V}$) presentó una diferencia porcentual de solo \textbf{2.0\%} con respecto al valor calculado de $6\text{ V}$.}
 
-\sangria{Por su parte, la corriente $I_{DQ}$ medida ($3.144\text{ mA}$) tuvo un desvío del \textbf{5.4\%} frente al valor teórico de $3.325\text{ mA}$. Esta diferencia es atribuible a la discrepancia encontrada durante la implementación práctica. El valor calculado para la resistencia $R_S$ fue de $123.48\ \Omega$ (normalizado a $120\ \Omega$), pero en el laboratorio fue necesario ajustar este valor a $\mathbf{80}$ $\Omega$ para lograr la polarización correcta, tal como se describe en el texto de la parte práctica.}
+\sangria{Por su parte, la corriente $I_{DQ}$ medida ($3.144\text{ mA}$) tuvo un desvío del \textbf{5.4\%} frente al valor teórico de $3.325\text{ mA}$.
+Esta diferencia es atribuible a la discrepancia encontrada durante la implementación práctica.
+El valor calculado para la resistencia $R_S$ fue de $123.48\ \Omega$ (normalizado a $120\ \Omega$), pero en el laboratorio fue necesario ajustar este valor a $\mathbf{80,2}\ \Omega$ para lograr la polarización correcta, tal como se describe en el texto de la parte práctica.}
 
-\sangria{Este ajuste en $R_S$ es la principal fuente del error porcentual en $I_{DQ}$. A pesar de esto, una diferencia del 5.4\% se considera aceptable y valida el modelo analítico como una herramienta de diseño eficaz, demostrando que los cálculos teóricos del punto Q sirvieron como una excelente aproximación para la implementación física.}
-
+\sangria{Este ajuste en $R_S$ es la principal fuente del error porcentual en $I_{DQ}$.
+A pesar de esto, una diferencia del 5.4\% se considera aceptable y valida el modelo analítico como una herramienta de diseño eficaz, demostrando que los cálculos teóricos del punto Q sirvieron como una excelente aproximación para la implementación física.}

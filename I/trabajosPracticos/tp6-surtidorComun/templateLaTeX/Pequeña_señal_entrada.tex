@@ -10,12 +10,12 @@ $$Z_o \approx R_D \quad \rightarrow \quad Z_o \approx \SI{1681,51}{\ohm}$$
 
 \sangria{La ganancia de tensión se calcula como:}
 $$A_v = -g_m \cdot R_D \quad \text{donde} \quad g_m = \left(-\frac{2I_{DSS}}{V_{GSoff}}\right) \left(1-\frac{V_{GSQ}}{V_{GSoff}}\right)$$
-\sangria{Utilizando los valores calculados en la sección anterior ($I_{DSS}=6,650\text{ mA}$, $V_{GSoff}=1,402\text{ V}$ y $V_{GSQ}=-0,4106\text{ V}$):}
-$$g_m = \left(-\frac{2(6,650\text{ mA})}{1,402\text{ V}}\right) \left(1-\frac{-0,4106\text{ V}}{1,402\text{ V}}\right) = (-9,486\text{ mS}) \cdot (1 + 0,2929) \quad \rightarrow \quad g_m \approx -12,26\text{ mS}$$
-$$A_v = -(-12,26\text{ mS}) \cdot \SI{1681,51}{\ohm} \quad \rightarrow \quad A_v \approx 20,62$$
+\sangria{Utilizando los valores calculados en la sección anterior ($I_{DSS}=6,650\text{ mA}$, $V_{GSoff}=-1,402\text{ V}$ y $V_{GSQ}=-0,4106\text{ V}$):}
+$$g_m = \left(-\frac{2 \cdot 6,650\text{ mA}}{-1,402\text{ V}}\right) \left(1-\frac{-0,4106\text{ V}}{-1,402\text{ V}}\right) = (9,486\text{ mS}) \cdot (1 - 0,2929) \quad \rightarrow \quad g_m \approx 6,71\text{ mS}$$
+$$A_v = -(6,71\text{ mS}) \cdot \SI{1681,51}{\ohm} \quad \rightarrow \quad A_v \approx -11,28$$
 
-\sangria{La ganancia de corriente se calcula como la relación entre el $g_{m}$ multiplicado $R_{g}$:}
-$$A_i = -g_{m} \cdot R_{G} \quad \rightarrow \quad A_i = 12,26 mS \cdot 1\ M\Omega \quad \rightarrow \quad A_i \approx12264,71 $$
+\sangria{La ganancia de corriente se calcula como la relación entre la ganancia de tensión y las impedancias:}
+$$A_i = A_v \cdot \frac{Z_i}{R_D} \quad \rightarrow \quad A_i = -11,28 \cdot \frac{\SI{1}{\mega\ohm}}{\SI{1681,51}{\ohm}} \quad \rightarrow \quad A_i \approx -6708$$
 
 \subsection{Cálculo experimental de ganancia de tensión, corriente e impedancia de entrada}
 

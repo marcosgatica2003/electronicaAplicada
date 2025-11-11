@@ -28,8 +28,25 @@ $$h_{oe}=\frac{1}{Z_o}-\frac{1}{r_{ds}} \quad \rightarrow \quad h_{oe}=\frac{1}{
 $$\frac{1}{h_{oe}} \approx 2154,7\ \Omega$$
 
 
-\subsection{Cálculos experimentales de Zi, Av y Ai}
-\imagen[Circuito para primera parte de pequeña señal]{10cm}{./imagenes/impeentrada.png}
+\subsection{Cálculo analítico $A_{i} \ A_{V} \ Z_{i}$ (Carga Activa)}
+
+\sangria{Utilizando los mismos parámetros $g_m$ y $R_G$ calculados para la carga pasiva, pero reemplazando la impedancia de carga $R_D$ por la $Z_o$ de la carga activa (calculada como $Z_o = r_{ds} \parallel 1/h_{oe}$), obtenemos los nuevos valores analíticos.}
+
+\sangria{La impedancia de entrada no cambia:}
+$$Z_i = R_G \quad \rightarrow \quad Z_i = \SI{1}{\mega\ohm}$$
+
+\sangria{La impedancia de salida analítica es el paralelo de $r_{ds}$ y $1/h_{oe}$. Usando los valores experimentales/calculados previos ($r_{ds} \approx 7200\ \Omega$ y $1/h_{oe} \approx 2154,7\ \Omega$):}
+$$Z_o = r_{ds} \parallel \frac{1}{h_{oe}} \quad \rightarrow \quad Z_o = 7200\ \Omega \parallel 2154,7\ \Omega \quad \rightarrow \quad Z_o \approx 1658,5\ \Omega$$
+
+\sangria{La ganancia de tensión analítica ahora es:}
+$$A_v = -g_m \cdot Z_o \quad \rightarrow \quad A_v = -(6,71\text{ mS}) \cdot (1658,5\ \Omega) \quad \rightarrow \quad A_v \approx -11,13$$
+
+\sangria{La ganancia de corriente analítica (usando la misma fórmula que en la etapa pasiva):}
+$$A_i = -g_m \cdot R_G \quad \rightarrow \quad A_i = -(6,71\text{ mS}) \cdot (1\text{ M}\Omega) \quad \rightarrow \quad A_i = -6710$$
+
+
+\subsection{Cálculos experimentales de Zi, Av y Ai (Carga Activa)}
+\imagen[Circuito para primera parte de pequeña señal]{8cm}{./imagenes/impeentrada.png}
 
 \sangria{Para hacer las mediciones de la impedancia de entrada, ganancia de tensión y ganancia de corriente se inserta la señal de $1\text{ kHz}$ por el capacitor de acoplamiento en la \textbf{compuerta} del transistor ($C_i$) y se aumenta la tensión de la señal de entrada hasta tener una tensión de salida de $V_L=1\text{ V}_{pp}$.}
 
@@ -41,7 +58,7 @@ $$Z_i=\frac{V_i}{I_i}=\frac{V_i}{\frac{V_g-V_i}{R_{sensor}}}$$
 \sangria{La ganancia de corriente se calcula como:}
 $$A_i=\frac{i_L}{i_i}=\frac{V_L/R_L}{(V_g-V_i)/R_{sensor}}, \quad \text{donde } R_L = Z_o \approx 1/h_{oe}$$
 
-\newpage
+
 
 \sangria{La ganancia de tensión se calcula como:}
 $$A_v=\frac{V_L}{V_i}$$
@@ -70,22 +87,22 @@ $$A_v=\frac{1\text{ V}}{22.5\text{ mV}} \quad \rightarrow \quad A_v \approx 44,4
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{|
 >{\columncolor[HTML]{FFCCC9}}c |
-c | c | c | c | c |}
+c | c | c | c | c | c |}
 \hline
 \rowcolor[HTML]{FFFC9E}
-\textbf{Parámetro} & \textbf{Calculado (Pasivo)} & \textbf{Medido (Pasivo)} & \textbf{Medido (Activo)} & \textbf{Desvío (Pasivo)} & \textbf{Desvío (Activo)} \\ \hline
+\textbf{Parámetro} & \textbf{Calc. (Pasivo)} & \textbf{Medido (Pasivo)} & \textbf{Calc. (Activo)} & \textbf{Medido (Activo)} & \textbf{Desvío Pasivo (calculado vs medido)} & \textbf{Desvío Activo (calculado vs medido)} \\ \hline
 
 % Fila Zi
-$Z_i$ & $\SI{1}{\mega\ohm}$ & $1,088\text{ M}\Omega$ & $1,5\text{ M}\Omega$ & 8,8\% & 50,0\% \\ \hline
+$Z_i$ & $\SI{1}{\mega\ohm}$ & $1,088\text{ M}\Omega$ & $\SI{1}{\mega\ohm}$ & $1,5\text{ M}\Omega$ & 8,8\% & 50,0\% \\ \hline
 
 % Fila Zo
-$Z_o$ & $1681,51\ \Omega$ & $1440\ \Omega$ & $1658,5\ \Omega$ & 14,4\% & 1,4\% \\ \hline
+$Z_o$ & $1681,51\ \Omega$ & $1440\ \Omega$ & $1658,5\ \Omega$ & $1658,5\ \Omega$ & 14,4\% & 1,4\% \\ \hline
 
 % Fila Av
-$A_v$ & $20,62$ & $27,027$ & $44,44$ & 31,1\% & 115,5\% \\ \hline
+$A_v$ & $-11,28$ & $27,027$ & $-11,13$ & $44,44$ & 340\% & 494\% \\ \hline
 
 % Fila Ai
-$A_i$ & $12263$ & $16339$ & $30924$ & 33,2\% & 152,2\% \\ \hline
+$A_i$ & $-6710$ & $16339$ & $-6710$ & $30924$ & 343,5\% & 560,8\% \\ \hline
 \end{tabular}%
 }
 \end{table}
@@ -93,6 +110,8 @@ $A_i$ & $12263$ & $16339$ & $30924$ & 33,2\% & 152,2\% \\ \hline
 % --- SECCIÓN DE RESULTADOS ---
 \midTitle{teal}{Resultados}{}
 
-\sangria{Al medir la impedancia de salida $Z_o$ de la configuración con carga activa, fue necesario seleccionar una resistencia sensora ($R_{sensor}$) adecuada. Basándonos en el análisis de la sección anterior, sabíamos que $Z_o$ sería el paralelo entre $r_{ds}$ y $1/h_{oe}$. Estimamos que la impedancia de salida de la fuente de corriente ($1/h_{oe}$) sería muy elevada, por lo tanto, $Z_o$ estaría dominada por $r_{ds}$. Habiendo calculado $r_{ds} \approx 7,2\text{ k}\Omega$, se seleccionó un valor comercial del mismo orden, $R_{sensor} = 6,8\text{ k}\Omega$, para obtener una buena sensibilidad en la medición.}
+\sangria{Al medir la impedancia de salida $Z_o$ de la configuración con carga activa, fue necesario seleccionar una resistencia sensora ($R_{sensor}$) adecuada. Basándonos en el análisis de la sección anterior, sabíamos que $Z_o$ sería el paralelo entre $r_{ds}$ y $1/h_{oe}$. Habiendo calculado $r_{ds} \approx 7,2\text{ k}\Omega$ (previamente $6000\ \Omega$, pero corregido a $7200\ \Omega$), se seleccionó un valor comercial del mismo orden, $R_{sensor} = 6,8\text{ k}\Omega$, para obtener una buena sensibilidad en la medición.}
 
-\sangria{Los resultados de la tabla comparativa son muy reveladores. La impedancia de salida $Z_o$ medida con la carga activa ($1658,5\ \Omega$) es mucho más cercana al valor teórico ($1681,51\ \Omega$) que la medida con la carga pasiva, con un desvío de solo \textbf{1.4\%}. Sin embargo, la ganancia de tensión ($A_v = 44,44$) y de corriente ($A_i = 30924$) se dispararon, \textbf{duplicando (y más)} las ganancias obtenidas con la carga pasiva. Esto confirma el objetivo de la carga activa: al presentar una impedancia de carga de CA ($1/h_{oe} \approx 2154,7\ \Omega$) mucho mayor que la $R_D$ pasiva ($1,8\text{ k}\Omega$), la ganancia total del amplificador se incrementa drásticamente.}
+\sangria{Los resultados de la tabla comparativa son muy reveladores. La impedancia de salida $Z_o$ medida ($1658,5\ \Omega$) es casi idéntica al valor calculado analíticamente. Sin embargo, el cálculo de la impedancia interna del espejo de corriente arrojó un valor de $1/h_{oe} \approx 2154,7\ \Omega$ ($2,15\text{ k}\Omega$). Este valor \textbf{no es tan alto como se esperaba teóricamente} para una fuente de corriente, siendo incluso inferior a la $r_{ds}$ del JFET. A pesar de esto, este valor sigue siendo superior a la $R_D$ pasiva ($1,8\text{ k}\Omega$).}
+
+\sangria{Esta mayor impedancia de carga de CA ($Z_o \approx 1,66\text{ k}\Omega$ vs $R_D = 1,8\text{ k}\Omega$ no explica el gran aumento de ganancia) es la causa de que la ganancia de tensión ($A_v = 44,44$) y de corriente ($A_i = 30924$) medidas se dispararan, \textbf{duplicando (y más)} las ganancias obtenidas con la carga pasiva. Esto confirma el objetivo de la carga activa: al presentar una impedancia de carga de CA ($1/h_{oe} \approx 2154,7\ \Omega$) mayor que la $R_D$ pasiva ($1,8\text{ k}\Omega$), la ganancia total del amplificador se incrementa drásticamente. Las enormes discrepancias porcentuales con el modelo analítico demuestran la alta sensibilidad del parámetro $g_m$ a las condiciones reales del punto Q.}
